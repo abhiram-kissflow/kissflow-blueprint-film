@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body{background:radial-gradient(1500px 1000px at 55% 45%,#F1ECE2 0%,#E9E1D3 60%,#DCD2C1 100%)}
+.grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .44  0 0 0 .5 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+.page{position:absolute;left:250px;top:120px;width:1060px;height:1100px;background:#FFFEFB;transform:rotate(-2.2deg);box-shadow:0 2px 0 rgba(0,0,0,.04),0 30px 70px rgba(70,55,30,.22);padding:70px 80px}
+.page2{position:absolute;left:300px;top:150px;width:1060px;height:1100px;background:#FBF8F2;transform:rotate(1.4deg);box-shadow:0 20px 50px rgba(70,55,30,.15)}
+.bk{font:600 17px Graphik;letter-spacing:.14em;color:#1F80FF}
+.bt{font:600 50px/1.1 Graphik;margin:16px 0 20px;letter-spacing:-.01em}
+.bb{display:flex;gap:12px;position:relative}.bb span{font:600 21px Graphik;padding:10px 18px;border-radius:999px}
+.dr{background:#FFF4E5;color:#B85C00;border:1.5px solid #F5B66B}.vr{border:1.5px solid #D5DCE6}
+.hl{position:absolute;left:-14px;top:-6px;width:330px;height:58px;background:rgba(207,44,145,.28);border-radius:6px;transform:rotate(-1deg);mix-blend-mode:multiply}
+.p{font:400 23px/1.6 Graphik;color:#3B4556;margin-top:30px}
+.h2{font:600 25px Graphik;margin:34px 0 10px}
+.li{font:400 22px/1.65 Graphik;color:#3B4556;padding-left:26px;position:relative}.li:before{content:"";position:absolute;left:6px;top:15px;width:7px;height:7px;border-radius:50%;background:#3B4556}
+.circ{position:absolute;left:180px;top:590px;width:470px;height:120px;border:4px solid #CF2C91;border-radius:50%;transform:rotate(-3deg)}
+.stamp{position:absolute;left:600px;top:820px;transform:rotate(-7deg);border:5px solid #4AA147;color:#4AA147;border-radius:16px;padding:16px 26px;font:600 34px/1.1 Graphik;letter-spacing:.08em;text-align:center;background:rgba(255,255,255,.35)}
+.stamp small{display:block;font:500 18px Graphik;letter-spacing:.2em;margin-top:6px}
+.cast{position:absolute;right:20px;bottom:-40px;height:650px;filter:grayscale(1) contrast(1.05)}
+.h{position:absolute;left:1340px;top:120px;width:520px;font:600 66px/1.05 Graphik;letter-spacing:-.015em;color:#14171C}
+.h em{font-style:normal;color:#1F80FF}
+.k{position:absolute;left:1344px;top:76px}
+.logo{position:absolute;left:1344px;bottom:60px;height:44px}
+.cs{font-weight:400;color:#8893A4;font-size:19px;position:relative;padding:0 6px}.cs:after{content:"";position:absolute;left:-14px;right:-14px;top:-14px;bottom:-12px;border:4px solid #CF2C91;border-radius:50%;transform:rotate(-3deg)}
+</style></head><body>
+<div class="grain"></div>
+<div class="page2"></div>
+<div class="page">
+<div class="bk">BUSINESS REQUIREMENTS · FULL DOCUMENT</div>
+<div class="bt">Placewell — Broking Operations</div>
+<div class="bb"><div class="hl"></div><span class="dr">Draft — awaiting sign-off</span><span class="vr">Version 1.0</span></div>
+<div class="p">This document specifies the business requirements to be reviewed and approved before the application is built.</div>
+<div class="h2">2. Scope</div>
+<div class="li"><b>Processes (8):</b> Client Onboarding, New Business Placement, Policy Renewal, Endorsement, Claims Advocacy…</div>
+<div class="li"><b>Role-based dashboards</b> &amp; navigation for 8 roles</div>
+<div class="h2">Out of scope <span class="cs">(confirm at sign-off)</span></div>
+<div class="li">Integrations with external / third-party systems unless separately specified</div>
+<div class="li">Migration of historical / legacy data</div>
+
+<div class="stamp">REVIEWED<small>BEFORE BUILD</small></div>
+</div>
+<img class="cast" src="../materials/cast/approver.png">
+<div class="kick k">Review &amp; sign-off</div>
+<div class="h">Nothing gets built until <em>you</em> say so.</div>
+</body></html>

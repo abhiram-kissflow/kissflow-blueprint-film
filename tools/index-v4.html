@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en" data-om-signature="off" data-composition-variables='[
+  {"id":"tagline","type":"string","label":"End tagline","default":"You write the spec. The agents build exactly that."},
+  {"id":"product","type":"string","label":"Product name","default":"Agentic App Builder"},
+  {"id":"accent","type":"color","label":"Kissflow blue","default":"#1F80FF"},
+  {"id":"pass","type":"color","label":"Pass green","default":"#4AA147"},
+  {"id":"ground","type":"color","label":"Ground","default":"#EDF5FE"},
+  {"id":"ink","type":"color","label":"Ink","default":"#0E1726"},
+  {"id":"captions","type":"boolean","label":"Burned captions","default":true},
+  {"id":"endHold","type":"number","label":"End hold (s)","default":2.2,"min":0,"max":8,"step":0.1,"group":"Timing"}
+]'>
+<head>
+<meta charset="utf-8">
+<title>Kissflow AI Builder — the SDLC behind the speed</title>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/om.js"></script>
+<style id="om-fonts">
+@font-face{font-family:Graphik;src:url(assets/fonts/graphik-regular.ttf);font-weight:400}
+@font-face{font-family:Graphik;src:url(assets/fonts/graphik-medium.ttf);font-weight:500}
+@font-face{font-family:Graphik;src:url(assets/fonts/graphik-semibold.ttf);font-weight:600}
+</style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden}
+#film{position:relative;width:1920px;height:1080px;overflow:hidden;font-family:Graphik,sans-serif;color:var(--ink);background:var(--ground)}
+.light{position:absolute;inset:0;background:radial-gradient(1400px 900px at 58% 42%,#FFFFFF 0%,rgba(237,245,254,0) 62%),radial-gradient(1100px 700px at 100% 100%,rgba(31,128,255,.10),transparent 70%)}
+.layer{position:absolute;inset:0}
+.card{background:#fff;border-radius:24px;box-shadow:0 30px 80px rgba(31,80,160,.12),0 2px 0 rgba(31,80,160,.04)}
+.kick{font:600 20px/1 Graphik;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.crop{position:absolute;background-repeat:no-repeat;border-radius:18px;background-color:#fff;box-shadow:0 24px 60px rgba(31,80,160,.14),0 0 0 1.5px #DCE6F4}
+.tick{display:inline-block;width:30px;height:30px;border-radius:50%;background:var(--pass);position:relative;flex:none}
+.tick:after{content:"";position:absolute;left:10px;top:6px;width:8px;height:14px;border:solid #fff;border-width:0 3.5px 3.5px 0;transform:rotate(45deg)}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,monospace}
+
+/* hook */
+#hook .prompt{position:absolute;left:300px;top:250px;width:1320px;padding:56px 64px}
+#hook .q{font:600 30px Graphik;color:#5B6678;margin-bottom:26px;display:flex;align-items:center;gap:14px}
+#hook .q img{height:34px}
+#hook .typed{font:500 54px/1.2 Graphik;min-height:66px;letter-spacing:-.01em}
+#hook .caret{display:inline-block;width:4px;height:56px;background:var(--accent);vertical-align:-8px;margin-left:4px}
+#hook .row{display:flex;align-items:center;justify-content:space-between;margin-top:38px}
+#hook .chip{display:inline-flex;align-items:center;gap:12px;background:#F2F6FC;border:1.5px solid #DCE6F4;border-radius:14px;padding:14px 20px;font:500 24px Graphik}
+#hook .chip i{width:34px;height:40px;border-radius:6px;background:#CF2C91;display:inline-block;position:relative}
+#hook .chip i:after{content:"PDF";position:absolute;left:0;right:0;bottom:6px;font:600 10px Graphik;color:#fff;text-align:center;font-style:normal}
+#hook .go{background:var(--accent);color:#fff;font:600 26px Graphik;padding:18px 30px;border-radius:999px}
+#hook .stream{position:absolute;left:300px;top:150px;width:1320px;height:780px;overflow:hidden;padding:48px 64px}
+#hook .stream .lines{position:absolute;left:64px;right:64px;top:48px}
+#hook .stream p{font:400 34px/1.42 Graphik;color:#3B4556;margin-bottom:26px}
+#hook .stream p b{color:var(--ink);font-weight:600}
+#hook .ready{position:absolute;left:560px;top:380px;width:800px;padding:40px 46px;display:flex;gap:26px;align-items:flex-start;background:#F0F9F1;border:2px solid #BFE3C2}
+#hook .ready .tick{width:52px;height:52px}
+#hook .ready .tick:after{left:18px;top:10px;width:12px;height:24px;border-width:0 5px 5px 0}
+#hook .ready h3{font:600 42px Graphik;margin-bottom:10px}
+#hook .ready p{font:400 26px/1.4 Graphik;color:#45506A}
+
+/* problem */
+#problem .cal{position:absolute;left:660px;top:190px;width:600px;height:560px;perspective:1600px}
+#problem .page{position:absolute;inset:0;border-radius:28px;background:#fff;box-shadow:0 30px 80px rgba(31,80,160,.14);transform-origin:50% 0;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#problem .page:before{content:"";position:absolute;left:0;right:0;top:0;height:110px;border-radius:28px 28px 0 0;background:#E9EEF6}
+#problem .page b{font:600 210px/1 Graphik;letter-spacing:-.02em;position:relative;top:40px}
+#problem .page small{font:500 26px Graphik;color:#8893A4;letter-spacing:.2em;position:relative;top:70px}
+#problem .stall{position:absolute;left:760px;top:800px;width:400px;text-align:center;font:600 24px Graphik;letter-spacing:.14em;color:#B85C00;background:#FFF4E5;border:2px solid #F5B66B;border-radius:999px;padding:14px 0}
+#problem .line{position:absolute;left:0;right:0;text-align:center;font:600 112px/1.05 Graphik;letter-spacing:-.025em}
+#problem .line em{font-style:normal;color:var(--accent)}
+#problem .m{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .04em .14em}
+#problem .w{display:inline-block}
+
+/* rail (screen space) */
+#rail{position:absolute;left:0;top:0;width:1920px;height:300px;transform-origin:960px 150px}
+#rail .track{position:absolute;left:330px;width:1260px;top:118px;height:5px;border-radius:3px;background:#C9D9F0}
+#rail .fill{position:absolute;left:330px;width:1260px;top:118px;height:5px;border-radius:3px;background:var(--pass);transform-origin:0 50%;transform:scaleX(0)}
+.st{position:absolute;top:88px;width:200px;margin-left:-100px;text-align:center}
+.st .n{position:relative;display:block;width:66px;height:66px;margin:0 auto 16px;border-radius:50%;background:#fff;border:4px solid #C9D9F0}
+.st .n .tick{position:absolute;inset:-4px;width:66px;height:66px;opacity:0}
+.st .n .tick:after{left:22px;top:12px;width:14px;height:26px;border-width:0 5px 5px 0}
+.st .n .ring{position:absolute;inset:-18px;border-radius:50%;border:4px solid var(--accent);opacity:0}
+.st .n .num{position:absolute;inset:0;font:600 24px/58px Graphik;color:#8893A4}
+.st span{font:500 25px Graphik;color:#5B6678;white-space:nowrap}
+
+/* world (camera) */
+#world{position:absolute;left:0;top:0;width:14000px;height:1080px}
+.panel{position:absolute;top:0;width:1920px;height:1080px}
+.ttl{position:absolute;left:120px;top:250px;font:600 30px Graphik;color:#5B6678}
+.ttl b{color:var(--ink)}
+/* ① */
+#p1 .chat{position:absolute;left:120px;top:310px;width:900px;padding:44px 48px}
+#p1 .chat p{font:400 30px/1.45 Graphik;color:#3B4556;margin-bottom:22px}
+#p1 .chat p b{color:var(--ink)}
+#p1 .brd{position:absolute;left:1080px;top:310px;width:720px;padding:40px 44px}
+#p1 .brd .t{font:600 34px/1.15 Graphik;margin:12px 0 24px}
+#p1 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+#p1 .stats div{border:1.5px solid #E3E9F2;border-radius:16px;padding:16px 18px;font:400 20px Graphik;color:#5B6678}
+#p1 .stats b{display:block;font:600 46px Graphik;color:var(--ink)}
+/* ② */
+#p2 .lane{position:absolute;top:320px;width:400px}
+#p2 .lane .crop{position:relative;width:400px;height:420px}
+#p2 .lane h4{font:600 28px Graphik;margin-top:22px;display:flex;align-items:center;gap:12px}
+#p2 .lane small{display:block;font:400 21px Graphik;color:#5B6678;margin-top:6px}
+/* ③ */
+#p3 .shot{position:absolute;left:120px;top:300px;width:1680px;height:620px;opacity:0}
+#p3 .say{position:absolute;left:0;top:40px;width:820px;font:500 50px/1.22 Graphik;letter-spacing:-.01em}
+#p3 .say .src{display:block;font:500 20px Graphik;letter-spacing:.18em;color:var(--accent);margin-bottom:22px}
+#p3 .say code{font:500 30px/1.4 ui-monospace,Menlo,monospace;background:#E9F0FB;color:#1F5FBF;padding:6px 12px;border-radius:10px;display:inline-block;margin-top:14px}
+#p3 .shot .crop{left:900px;top:0;width:780px;height:560px}
+#p3 .slot{position:absolute;left:1560px;top:260px;width:110px;height:110px;border-radius:50%;z-index:3}
+.slot.x{background:#E5484D}.slot.x:before,.slot.x:after{content:"";position:absolute;left:51px;top:24px;width:8px;height:62px;border-radius:4px;background:#fff;transform:rotate(45deg)}.slot.x:after{transform:rotate(-45deg)}
+.slot.ok{background:var(--pass)}.slot.ok:after{content:"";position:absolute;left:38px;top:22px;width:22px;height:44px;border:solid #fff;border-width:0 9px 9px 0;transform:rotate(45deg)}
+.slot.scan{background:#fff;border:6px solid var(--accent)}
+#p3 .pill{position:absolute;left:520px;top:200px;display:flex;align-items:center;gap:26px;background:#E9F6EA;border:3px solid #9ED3A2;border-radius:999px;padding:34px 56px;font:600 72px Graphik;color:#2D7D33}
+#p3 .pill .tick{width:80px;height:80px}
+#p3 .pill .tick:after{left:27px;top:14px;width:20px;height:38px;border-width:0 8px 8px 0}
+/* ④ */
+#p4 .brd{position:absolute;left:120px;top:300px;width:1060px;padding:44px 50px}
+#p4 .bk{font:600 17px Graphik;letter-spacing:.14em;color:var(--accent)}
+#p4 .bt{font:600 46px/1.12 Graphik;margin:14px 0 20px;letter-spacing:-.01em}
+.bb{display:flex;gap:12px}.bb span{font:600 21px Graphik;padding:10px 18px;border-radius:999px;white-space:nowrap}
+.dr{background:#FFF4E5;color:#B85C00;border:1.5px solid #F5B66B}.vr{border:1.5px solid #D5DCE6}
+#p4 .bs{font:400 22px/1.5 Graphik;color:#5B6678;margin:22px 0 22px}
+#p4 .sc{font:600 23px Graphik;margin-bottom:8px}#p4 .sc i{font-style:normal;font-weight:400;color:#8893A4;font-size:18px}
+#p4 .sl{font:400 21px/1.6 Graphik;color:#3B4556;padding-left:22px;position:relative}
+#p4 .sl:before{content:"";position:absolute;left:4px;top:14px;width:7px;height:7px;border-radius:50%;background:#3B4556}
+#p4 .dec{position:absolute;left:1240px;top:300px;width:560px;padding:36px 40px}
+#p4 .dec h4{font:600 34px Graphik;margin-bottom:22px}
+#p4 .dec .tabs{display:flex;gap:26px;border-bottom:2px solid #E3E9F2;padding-bottom:14px;font:500 22px Graphik;color:#5B6678}
+#p4 .dec .tabs b{color:var(--ink);position:relative}
+#p4 .dec .tabs b:after{content:"";position:absolute;left:0;right:0;bottom:-16px;height:3px;background:var(--accent)}
+#p4 .dec .tabs i{font-style:normal;background:#EEF1F6;border-radius:999px;padding:2px 9px;margin-left:6px;font-size:17px}
+#p4 .dec p{font:400 italic 21px Graphik;color:#5B6678;margin-top:22px}
+#p4 .gen{position:absolute;left:1240px;top:610px;width:560px;padding:30px 34px;display:flex;gap:18px;background:#F0F9F1;border:2px solid #BFE3C2;align-items:center}
+#p4 .gen .txt h5{font:600 26px Graphik}
+#p4 .gen .txt p{font:400 18px/1.4 Graphik;color:#45506A;margin-top:6px}
+#p4 .gen .btn{margin-left:auto;background:var(--accent);color:#fff;font:600 22px Graphik;padding:14px 22px;border-radius:999px;position:relative}
+#p4 .ripple{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px;border-radius:50%;border:3px solid var(--accent);opacity:0}
+.cursor{position:absolute;width:34px;height:44px;z-index:9}
+/* ⑤ ⑥ */
+#p5 .bld{position:absolute;left:260px;top:320px;width:1400px;padding:50px 56px}
+#p5 .bld h3{font:600 48px Graphik;margin-bottom:26px}
+#p5 .chips{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+#p5 .chips span{font:600 23px Graphik;padding:12px 20px;border-radius:999px;border:2px solid #CFE0F7;background:#F2F7FE;color:#1F5FBF}
+#p5 .chips span.gen{background:#FFF4E5;border-color:#F5B66B;color:#B85C00}
+#p5 .made{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+#p5 .made div{border:1.5px solid #E3E9F2;border-radius:16px;padding:18px 20px;font:400 20px Graphik;color:#5B6678}
+#p5 .made b{display:block;font:600 48px Graphik;color:var(--ink)}
+#p6 .tst{position:absolute;left:260px;top:300px;width:1400px;padding:40px 50px}
+#p6 .tst h3{font:600 38px Graphik;margin-bottom:6px}
+#p6 .tst .sub{font:400 22px Graphik;color:#5B6678;margin-bottom:22px}
+#p6 .rows{display:grid;grid-template-columns:1fr 1fr;gap:12px 40px}
+#p6 .r{display:flex;align-items:center;gap:16px;font:500 27px Graphik;padding:12px 0;border-bottom:1.5px solid #EEF2F7}
+#p6 .r em{font-style:normal;margin-left:auto;font:400 20px Graphik;color:#8893A4}
+#p6 .r .tick{opacity:0;transform:scale(.4)}
+/* ⑦ */
+#p7 .ver{position:absolute;left:180px;top:320px;width:900px;padding:36px 40px}
+#p7 .ver .hd{display:flex;align-items:center;gap:18px;font:500 26px Graphik;color:#5B6678}
+#p7 .ver .sel{border:1.5px solid #DCE3EE;border-radius:14px;padding:14px 22px;font:600 26px Graphik;color:var(--ink);width:340px;display:flex;justify-content:space-between}
+#p7 .ver ul{list-style:none;margin-top:18px;border:1.5px solid #E3E9F2;border-radius:16px;overflow:hidden}
+#p7 .ver li{font:400 23px Graphik;padding:18px 22px;border-bottom:1.5px solid #EEF2F7;color:#3B4556}
+#p7 .ver li:first-child{background:#EEF5FF;color:var(--ink);font-weight:600}
+#p7 .prod{position:absolute;left:1180px;top:320px;width:560px;height:480px;border:3px dashed #B8C6DA;border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:rgba(255,255,255,.55)}
+#p7 .prod .lock{width:120px;height:120px;border-radius:50%;background:#fff;box-shadow:0 14px 40px rgba(31,80,160,.15);display:flex;align-items:center;justify-content:center}
+#p7 .prod h4{font:600 46px Graphik}
+#p7 .prod p{font:400 24px/1.4 Graphik;color:#5B6678;text-align:center;width:420px}
+
+/* hero 3D */
+#space{position:absolute;inset:0;perspective:2400px;perspective-origin:50% 40%;opacity:0;pointer-events:none}
+#stack{position:absolute;left:510px;top:200px;width:900px;height:540px;transform-style:preserve-3d}
+.sh{position:absolute;inset:0;transform-style:preserve-3d}
+.sh .im{position:absolute;inset:0;border-radius:16px;background-repeat:no-repeat;background-color:#fff;box-shadow:0 0 0 1.5px rgba(31,128,255,.35),0 30px 60px rgba(20,60,130,.16)}
+.sh .lb{position:absolute;left:0;top:-58px;font:600 26px Graphik;display:flex;align-items:center;gap:10px;color:var(--ink);opacity:0}
+.sh .lb i{font-style:normal;width:36px;height:36px;border-radius:50%;background:var(--pass);color:#fff;font:600 18px/36px Graphik;text-align:center}
+#scan{position:absolute;inset:-120px;border-radius:28px;background:linear-gradient(90deg,rgba(31,128,255,.05),rgba(31,128,255,.28) 40%,rgba(31,128,255,.28) 60%,rgba(31,128,255,.05));box-shadow:0 0 0 5px var(--accent),0 0 120px 24px rgba(31,128,255,.55);opacity:0}
+#flag{position:absolute;left:1240px;top:120px;background:#FFF4E5;border:2px solid #F5B66B;color:#B85C00;font:600 28px Graphik;padding:16px 24px;border-radius:16px;opacity:0;box-shadow:0 20px 50px rgba(184,92,0,.15)}
+#flag small{display:block;font:400 19px Graphik;color:#8A5A1E;margin-top:6px}
+#heroT{position:absolute;left:120px;top:170px;font:600 70px/1.05 Graphik;letter-spacing:-.02em;opacity:0}
+#heroT em{font-style:normal;color:var(--accent)}
+
+/* end */
+#end{position:absolute;inset:0;background:#fff;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#end .tg{font:600 76px/1.1 Graphik;letter-spacing:-.02em;text-align:center;width:1400px}
+#end .tg em{font-style:normal;color:var(--accent)}
+#end .lk{display:flex;align-items:center;gap:26px;margin-top:70px}
+#end .lk img{height:64px}
+#end .lk span{font:500 34px Graphik;color:#45506A;border-left:2px solid #D5DCE6;padding-left:26px}
+
+/* pointer */
+#ptr{position:absolute;left:0;top:0;width:44px;height:44px;z-index:30;pointer-events:none;transform-origin:0 0;opacity:0}
+#ptr svg{display:block;overflow:visible;filter:drop-shadow(0 0 5px rgba(255,255,255,.95)) drop-shadow(0 0 12px rgba(255,255,255,.55)) drop-shadow(0 1px 2px rgba(0,0,0,.45)) drop-shadow(0 6px 14px rgba(14,23,38,.35))}
+#ptrRing{position:absolute;left:0;top:0;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:3px solid rgba(255,255,255,.95);box-shadow:0 0 12px rgba(255,255,255,.8),0 0 0 1.5px rgba(14,23,38,.3);z-index:29;pointer-events:none;opacity:0}
+/* captions */
+#cap{position:absolute;left:0;right:0;bottom:44px;text-align:center;z-index:20;pointer-events:none}
+#cap span{display:inline-block;max-width:1500px;background:rgba(14,23,38,.86);color:#fff;font:500 31px/1.35 Graphik;padding:12px 26px;border-radius:14px;opacity:0}
+</style>
+<script type="application/json" id="om-cues">{"source":"recording:narration.wav","precision":"asr","offset":0,"duration":90,"words":[
+{"word":"任何","start":0.473,"end":0.744},
+{"word":"AI","start":0.744,"end":0.88},
+{"word":"能","start":0.88,"end":1.016},
+{"word":"建设","start":1.016,"end":1.288},
+{"word":"你","start":1.288,"end":1.423},
+{"word":"一个","start":1.423,"end":1.695},
+{"word":"应用","start":1.695,"end":1.966},
+{"word":"程序","start":1.966,"end":2.238},
+{"word":"的","start":2.238,"end":2.374},
+{"word":"程序","start":2.374,"end":6.82},
+{"word":"建设","start":6.82,"end":7.108},
+{"word":"到","start":7.108,"end":7.252},
+{"word":"实际","start":7.252,"end":7.539},
+{"word":"上","start":7.539,"end":7.683},
+{"word":"仍然是","start":7.683,"end":8.115},
+{"word":"一段","start":8.115,"end":8.402},
+{"word":"时间","start":8.402,"end":9.56},
+{"word":"因为","start":9.56,"end":9.831},
+{"word":"实际","start":9.831,"end":10.101},
+{"word":"上","start":10.101,"end":10.237},
+{"word":"没有","start":10.237,"end":10.508},
+{"word":"一个","start":10.508,"end":10.778},
+{"word":"程序","start":10.778,"end":11.56},
+{"word":"它是","start":11.56,"end":11.851},
+{"word":"一个","start":11.851,"end":12.143},
+{"word":"程序","start":12.143,"end":13.32},
+{"word":"KISSFLOW","start":13.32,"end":13.617},
+{"word":"的","start":13.617,"end":13.765},
+{"word":"Agentic","start":13.765,"end":14.21},
+{"word":"AppBuilder","start":14.21,"end":14.655},
+{"word":"成立","start":14.655,"end":14.951},
+{"word":"了","start":14.951,"end":15.099},
+{"word":"这个","start":15.099,"end":15.396},
+{"word":"程序","start":15.396,"end":15.693},
+{"word":"在","start":15.693,"end":15.841},
+{"word":"每","start":15.841,"end":15.989},
+{"word":"一步","start":15.989,"end":16.286},
+{"word":"的","start":16.286,"end":16.434},
+{"word":"程序","start":16.434,"end":16.731},
+{"word":"中","start":16.731,"end":17.58},
+{"word":"它","start":17.58,"end":17.748},
+{"word":"开始","start":17.748,"end":18.083},
+{"word":"以","start":18.083,"end":18.251},
+{"word":"你的","start":18.251,"end":18.586},
+{"word":"要求","start":18.586,"end":19.4},
+{"word":"Agent","start":19.4,"end":19.851},
+{"word":"认识","start":19.851,"end":20.303},
+{"word":"BRD","start":20.303,"end":20.529},
+{"word":"与","start":20.529,"end":20.754},
+{"word":"每","start":20.754,"end":20.98},
+{"word":"个","start":20.98,"end":21.206},
+{"word":"转换","start":21.206,"end":22},
+{"word":"转换","start":22,"end":22.38},
+{"word":"转换","start":22.38,"end":25.26},
+{"word":"每","start":25.26,"end":26.135},
+{"word":"个","start":26.135,"end":27.009},
+{"word":"转换","start":27.009,"end":32.48},
+{"word":"转换","start":32.48,"end":32.48},
+{"word":"转换","start":32.48,"end":32.48},
+{"word":"每","start":32.48,"end":32.639},
+{"word":"个","start":32.639,"end":32.798},
+{"word":"转换","start":32.798,"end":33.115},
+{"word":"的","start":33.115,"end":33.274},
+{"word":"程序","start":33.274,"end":33.592},
+{"word":"都会","start":33.592,"end":33.909},
+{"word":"有","start":33.909,"end":34.068},
+{"word":"一个","start":34.068,"end":34.385},
+{"word":"程序","start":34.385,"end":35.28},
+{"word":"它是","start":35.28,"end":35.44},
+{"word":"一个","start":35.44,"end":35.6},
+{"word":"转换","start":35.6,"end":36},
+{"word":"转换","start":36,"end":37},
+{"word":"转换","start":37,"end":39.566},
+{"word":"它是","start":39.566,"end":39.566},
+{"word":"一个","start":39.566,"end":39.566},
+{"word":"转换","start":39.566,"end":39.566},
+{"word":"转换","start":43.198,"end":43.92},
+{"word":"它是","start":43.92,"end":44.332},
+{"word":"一个","start":44.332,"end":45.048},
+{"word":"转换","start":45.048,"end":45.46},
+{"word":"转换","start":45.46,"end":45.46},
+{"word":"它是","start":45.46,"end":45.46},
+{"word":"一个","start":45.46,"end":45.46},
+{"word":"转换","start":45.46,"end":45.46},
+{"word":"转换","start":45.46,"end":45.46},
+{"word":"它是","start":45.46,"end":45.5},
+{"word":"一个","start":45.5,"end":45.54},
+{"word":"转换","start":45.54,"end":45.58},
+{"word":"转换","start":45.58,"end":45.58},
+{"word":"它是","start":45.58,"end":45.58},
+{"word":"一个","start":45.58,"end":45.58},
+{"word":"转换","start":45.58,"end":45.58},
+{"word":"转换","start":45.58,"end":45.58},
+{"word":"它是","start":45.58,"end":45.58},
+{"word":"一个","start":45.58,"end":45.58},
+{"word":"转换","start":45.58,"end":45.58},
+{"word":"转换","start":47.057,"end":50.52},
+{"word":"它是","start":50.52,"end":50.673},
+{"word":"一个","start":50.673,"end":50.827},
+{"word":"转换","start":50.827,"end":50.98},
+{"word":"转换","start":50.98,"end":58.5},
+{"word":"它是","start":58.5,"end":64.199},
+{"word":"一个","start":64.199,"end":66.946},
+{"word":"转换","start":66.946,"end":69.132},
+{"word":"转换","start":73.128,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.32},
+{"word":"一个","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"转换","start":73.32,"end":73.32},
+{"word":"它是","start":73.32,"end":73.473},
+{"word":"一个","start":73.473,"end":73.627},
+{"word":"转换","start":73.627,"end":73.78},
+{"word":"转换","start":73.78,"end":73.78},
+{"word":"它是","start":73.78,"end":73.986},
+{"word":"一个","start":73.986,"end":74.192},
+{"word":"转换","start":74.192,"end":74.398},
+{"word":"转换","start":74.81,"end":75},
+{"word":"它是","start":75,"end":75.503},
+{"word":"一个","start":75.503,"end":76.006},
+{"word":"转换","start":76.006,"end":76.509},
+{"word":"转换","start":80.048,"end":80.24},
+{"word":"它是","start":80.24,"end":81.071},
+{"word":"一个","start":81.071,"end":81.518},
+{"word":"转换","start":81.518,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"它是","start":81.966,"end":81.966},
+{"word":"一个","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"它是","start":81.966,"end":81.966},
+{"word":"一个","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"它是","start":81.966,"end":81.966},
+{"word":"一个","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"它是","start":81.966,"end":81.966},
+{"word":"一个","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"它是","start":81.966,"end":81.966},
+{"word":"一个","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966},
+{"word":"转换","start":81.966,"end":81.966}
+]}</script>
+</head>
+<body>
+<div id="film" data-composition-id="film" data-width="1920" data-height="1080">
+  <audio id="om-sound" src="assets/sound.wav" data-start="0" data-duration="90" data-track-index="8" data-volume="1"></audio>
+  <audio id="om-voice" src="assets/voice.wav" data-start="0" data-duration="90" data-track-index="9" data-volume="1"></audio>
+  <div class="light"></div>
+
+  <!-- HOOK -->
+  <section id="hook" class="layer" data-om-id="hook">
+    <div class="prompt card" data-om-id="prompt">
+      <div class="q"><img src="assets/img/kissflow-logo.svg" alt="">What should we build today?</div>
+      <div class="typed"><span id="typed"></span><span class="caret"></span></div>
+      <div class="row"><span class="chip" id="brdchip" data-om-id="brd-chip"><i></i>Placewell_Insurance_Broker_BRD_v2.pdf</span><span class="go" id="go">Start building →</span></div>
+    </div>
+    <div class="stream card" id="stream" data-om-id="agent-stream" style="opacity:0">
+      <div class="lines" id="lines">
+        <p>Reading the BRD now to understand the roles, policies, and workflows before planning the build.</p>
+        <p>Got it — this is an unusually complete brief: <b>8 internal roles, 8 processes</b> (5 of them real approval workflows), 14 registers/masters, and 9 named dashboards with exact KPIs.</p>
+        <p>Shell's built. Now the seed data — writing it myself since the BRD already hands me every number the dashboards need to agree with.</p>
+        <p>Now fanning out the role pages, Client 360, the component kit, and the blueprint in parallel.</p>
+        <p>Now dispatching the eight page-builder agents and writing the blueprint myself, in parallel.</p>
+        <p>All eight page agents have finished. Now assembling the role parts and verifying the blueprint.</p>
+      </div>
+    </div>
+    <div class="ready card" id="ready" data-om-id="app-ready" style="opacity:0"><span class="tick"></span><div><h3>Your app is ready</h3><p>The prototype and blueprint are both built — review them here, or build it for real in Kissflow.</p></div></div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="layer" data-om-id="problem" style="opacity:0">
+    <div class="cal" id="cal" data-om-id="calendar"></div>
+    <div class="stall" id="stall" data-om-id="stall">PROTOTYPE · NOT IN PRODUCTION</div>
+    <div class="line" id="l1" style="top:330px" data-om-id="line-prototype"></div>
+    <div class="line" id="l2" style="top:500px" data-om-id="line-process"></div>
+  </section>
+
+  <!-- WORLD -->
+  <div id="world" data-om-id="world">
+    <section class="panel" id="p1" style="left:0" data-om-id="requirements">
+      <div class="chat card" data-om-id="req-chat">
+        <p class="r1">Reading the BRD now to understand the roles, policies, and workflows before planning the build.</p>
+        <p class="r2">Got it — this is an unusually complete brief: <b>8 internal roles, 8 processes</b> (5 of them real approval workflows), 14 registers/masters, and 9 named dashboards with exact KPIs.</p>
+      </div>
+      <div class="brd card" id="p1brd" data-om-id="req-brd"><div class="kick">Business requirements</div><div class="t">Placewell — Broking Operations</div>
+        <div class="stats"><div><b class="cnt" data-to="8">0</b>roles</div><div><b class="cnt" data-to="8">0</b>processes</div><div><b class="cnt" data-to="20">0</b>flows</div><div><b class="cnt" data-to="24">0</b>lists</div><div><b class="cnt" data-to="75">0</b>permissions</div><div><b class="cnt" data-to="17">0</b>pages</div></div></div>
+    </section>
+
+    <section class="panel" id="p2" style="left:2000px" data-om-id="design">
+      <div class="lane" style="left:120px" data-om-id="lane-data"><div class="crop" data-crop="c11-bp-Data_Model,930,300,930,980"></div><h4><span class="tick"></span>Data</h4><small>20 entities, every relationship</small></div>
+      <div class="lane" style="left:560px" data-om-id="lane-workflow"><div class="crop" data-crop="c14-bp-Workflows,1120,410,370,520"></div><h4><span class="tick"></span>Workflows</h4><small>steps, actors, conditions</small></div>
+      <div class="lane" style="left:1000px" data-om-id="lane-perm"><div class="crop" data-crop="c15-bp-Roles_Permissions,486,340,700,690"></div><h4><span class="tick"></span>Permissions</h4><small>role × flow, create · edit · view</small></div>
+      <div class="lane" style="left:1440px" data-om-id="lane-screens"><div class="crop" data-crop="c16-bp-Pages_Nav,486,300,740,640"></div><h4><span class="tick"></span>Screens</h4><small>a landing page per role</small></div>
+    </section>
+
+    <section class="panel" id="p3" style="left:4000px" data-om-id="verify">
+      <div class="shot" id="v1"><div class="say"><span class="src">AI BUILDER · BUILD LOG</span>Full assembly succeeded. Now running the verifier.</div><div class="crop" data-crop="c13-bp-Business_Logic,486,300,1380,420"></div></div>
+      <div class="shot" id="v2"><div class="say"><span class="src">VERIFIER · WORKFLOW CONDITIONS</span>Can every step be reached? Can anyone get locked out?</div><div class="crop" data-crop="c14-bp-Workflows,1130,420,340,540"></div></div>
+      <div class="shot" id="v3"><div class="say"><span class="src">AI BUILDER · BUILD LOG</span>Now fixing the terminal-step conditions and the bad formula.</div><div class="crop" data-crop="c13-bp-Business_Logic,486,430,1380,290"></div></div>
+      <div class="shot" id="v4"><div class="say"><span class="src">AI BUILDER · BUILD LOG</span>Now fixing the nav shape to<br><code>nav.menus[].submenus[{name,page,visibleTo}]</code></div><div class="crop" data-crop="c16-bp-Pages_Nav,486,300,240,660"></div></div>
+      <div class="shot" id="v5"><div class="say"><span class="src">AI BUILDER · BUILD LOG</span>Now re-running verify.</div><div class="crop" data-crop="c15-bp-Roles_Permissions,486,560,700,420"></div></div>
+      <div class="shot" id="v6"><div class="say"><span class="src">AI BUILDER · BUILD LOG</span>IR verifies clean.</div><div class="crop" data-crop="c11-bp-Data_Model,930,300,930,700"></div></div>
+      <div class="shot" id="v7"><div class="say"><span class="src">AI BUILDER · BUILD LOG</span>Prototype verifies clean across all 8 roles.</div><div class="crop" data-crop="c17-bp-Automations,486,350,1380,480"></div></div>
+      <div class="shot" id="v8"><div class="pill" data-om-id="gate-pill"><span class="tick"></span>Gate passes clean.</div></div>
+      <div class="slot" id="slot" data-om-id="verdict"></div>
+    </section>
+
+    <section class="panel" id="p4" style="left:6000px" data-om-id="signoff">
+      <div class="brd card" id="p4brd" data-om-id="brd-signoff">
+        <div class="bk">BUSINESS REQUIREMENTS · FULL DOCUMENT</div>
+        <div class="bt">Placewell — Broking Operations</div>
+        <div class="bb" id="badge"><span class="dr">Draft — awaiting sign-off</span><span class="vr">Version 1.0</span></div>
+        <div class="bs">Prepared for customer review and sign-off. Section references map to the design in the other tabs.</div>
+        <div class="sc">Out of scope <i>(confirm at sign-off)</i></div>
+        <div class="sl">Integrations with external / third-party systems unless separately specified</div>
+        <div class="sl">Migration of historical / legacy data</div>
+      </div>
+      <div class="dec card" id="dec" data-om-id="decisions"><h4>Decisions</h4><div class="tabs"><b>Your decisions<i>0</i></b><span>Decision log<i>5</i></span></div><p>No open questions — nothing needs your decision.</p></div>
+      <div class="gen card" id="gen" data-om-id="generate"><span class="tick"></span><div class="txt"><h5>Your app is ready</h5><p>Review it here, or build it for real in Kissflow.</p></div><span class="btn" id="genbtn">Generate<span class="ripple" id="ripple"></span></span></div>
+    </section>
+
+    <section class="panel" id="p5" style="left:8000px" data-om-id="build">
+      <div class="bld card"><h3>Generating in Kissflow</h3>
+        <div class="chips"><span>Development environment</span><span>Built as you · your Kissflow permissions</span><span class="gen">GENERATING</span></div>
+        <div class="made"><div><b class="cnt" data-to="8">0</b>processes</div><div><b class="cnt" data-to="12">0</b>data forms</div><div><b class="cnt" data-to="24">0</b>lists</div><div><b class="cnt" data-to="8">0</b>roles</div><div><b class="cnt" data-to="17">0</b>pages</div></div></div>
+    </section>
+
+    <section class="panel" id="p6" style="left:10000px" data-om-id="test">
+      <div class="tst card"><h3>Acceptance — every journey, every role</h3><div class="sub">Real records driven through each persona's workflow</div>
+        <div class="rows" id="rows">
+          <div class="r"><span class="tick"></span>Account Executive<em>raise → approve → track</em></div>
+          <div class="r"><span class="tick"></span>Broker Support<em>quote → bind</em></div>
+          <div class="r"><span class="tick"></span>Claims Manager<em>10-day client update</em></div>
+          <div class="r"><span class="tick"></span>Compliance Officer<em>disclosures</em></div>
+          <div class="r"><span class="tick"></span>Finance<em>invoice on bind</em></div>
+          <div class="r"><span class="tick"></span>Broking Manager<em>renewal escalation</em></div>
+          <div class="r"><span class="tick"></span>Executive<em>21-day escalation</em></div>
+          <div class="r"><span class="tick"></span>Admin<em>master registers</em></div>
+        </div></div>
+    </section>
+
+    <section class="panel" id="p7" style="left:12000px" data-om-id="version">
+      <div class="ver card" data-om-id="versions"><div class="hd">Versions <span class="sel">Latest <span>⌄</span></span></div>
+        <ul id="vlist"><li>Memo Approval · 3 roles · 3 pages — chat build 1</li><li>Internal Memo Approval (demo) — chat build 1</li><li>Internal Memo Approval (demo) — chat build 1</li><li>Internal Memo Approval (demo) — chat build 1</li></ul></div>
+      <div class="prod" id="prod" data-om-id="production-gate"><div class="lock"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#0E1726" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h4>Production</h4><p>Promotion is a human step — your Kissflow admin decides.</p></div>
+    </section>
+  </div>
+
+  <!-- RAIL -->
+  <div id="rail" data-om-id="sdlc-rail" style="opacity:0">
+    <div class="track"></div><div class="fill" id="fill"></div>
+  </div>
+
+  <!-- HERO 3D -->
+  <section id="space" data-om-id="blueprint-stack"><div id="stack"><div id="scan"></div></div></section>
+  <div id="flag" data-om-id="flag">⚠ Possibly missing expressions · 9<small>flagged for review — not guessed</small></div>
+  <div id="heroT" data-om-id="hero-title">It's a <em>Blueprint.</em></div>
+
+  <!-- END -->
+  <section id="end" data-om-id="end-card"><div class="tg" data-om-var="tagline" id="tg"></div><div class="lk"><img src="assets/img/kissflow-logo.svg" alt="Kissflow"><span data-var-text="product">Agentic App Builder</span></div></section>
+
+  <!-- animated pointer (ported from the animated-pointer skill: dart, glow, dark edge, heading turn, click ring) -->
+  <div id="ptr" data-om-id="pointer"><svg width="44" height="44" viewBox="0 0 28 28"><path d="M26 14 L3 3.5 L9 14 L3 24.5 Z" fill="#fff" stroke="rgba(21,24,30,.55)" stroke-width="1" stroke-linejoin="round"/></svg></div>
+  <div id="ptrRing"></div>
+
+  <div id="cap" data-om-id="captions"><span id="capt"></span></div>
+</div>
+
+<script type="text/vnd.abc" id="om-score">
+X:1
+T:Kissflow AI Builder · the SDLC behind the speed
+M:4/4
+L:1/16
+Q:1/4=112
+K:A
+V:MA inst=marimba gain=0.62 role=melody
+!mark:hook! !mf! AceaecAceaeceaec |  AceaecAceaeceaec |  DFAdAFDFAdAFAdAF | !mark:problem! !p! F2A2c2f2c2A2c2f2 |  D2F2A2d2A2F2A2d2 |  E2G2B2e2B2G2B2e2 | !mark:spine! !mf! A2c2e2a2e2c2e2a2 |  E2G2B2e2B2G2B2e2 | !mark:requirements!  A2c2e2a2e2c2e2a2 |  F2A2c2f2c2A2c2f2 |  D2F2A2d2A2F2A2d2 | !mark:design!  A2c2e2a2e2c2e2a2 |  E2G2B2e2B2G2B2e2 |  F2A2c2f2c2A2c2f2 |  D2F2A2d2A2F2A2d2 | !mark:verify! !f! FAcfcAFAcfcAcfcA |  DFAdAFDFAdAFAdAF |  B,DFBFDB,DFBFDFBFD |  C^EGcG^EC^EGcG^EGcG^E | !mark:stop! z16 | !mark:blueprint! !ff! !hit! AceaecAceaeceaec |  FAcfcAFAcfcAcfcA |  DFAdAFDFAdAFAdAF |  EGBeBGEGBeBGBeBG |  AceaecAceaeceaec | !mark:signoff! !mf! D2F2A2d2A2F2A2d2 |  A2c2e2a2e2c2e2a2 |  E2G2B2e2B2G2B2e2 |  A2c2e2a2e2c2e2a2 | !mark:build! !mf! AceaecAceaeceaec |  EGBeBGEGBeBGBeBG | !mark:test!  FAcfcAFAcfcAcfcA |  DFAdAFDFAdAFAdAF |  EGBeBGEGBeBGBeBG | !mark:version!  A2c2e2a2e2c2e2a2 |  D2F2A2d2A2F2A2d2 |  E2G2B2e2B2G2B2e2 | !mark:resolve! !mp! F2A2c2f2c2A2c2f2 |  D2F2A2d2A2F2A2d2 |  E2G2B2e2B2G2B2e2 | !mark:end! !mf! A2c2e2a2 a8 |  e2c2A4 A8 |]
+V:MB inst=marimba gain=0.42
+ceaeceaeceaeceae | ceaeceaeceaeceae | FAdAFAdAFAdAFAdA | z2c2A2f2c2A2c2z2 | z2A2F2d2A2F2A2z2 | z2B2G2e2B2G2B2z2 | z2e2c2a2e2c2e2z2 | z2B2G2e2B2G2B2z2 | z2e2c2a2e2c2e2z2 | z2c2A2f2c2A2c2z2 | z2A2F2d2A2F2A2z2 | z2e2c2a2e2c2e2z2 | z2B2G2e2B2G2B2z2 | z2c2A2f2c2A2c2z2 | z2A2F2d2A2F2A2z2 | AcfcAcfcAcfcAcfc | FAdAFAdAFAdAFAdA | DFBFDFBFDFBFDFBF | ^EGcG^EGcG^EGcG^EGcG | z16 | ceaeceaeceaeceae | AcfcAcfcAcfcAcfc | FAdAFAdAFAdAFAdA | GBeBGBeBGBeBGBeB | ceaeceaeceaeceae | z2A2F2d2A2F2A2z2 | z2e2c2a2e2c2e2z2 | z2B2G2e2B2G2B2z2 | z2e2c2a2e2c2e2z2 | ceaeceaeceaeceae | GBeBGBeBGBeBGBeB | AcfcAcfcAcfcAcfc | FAdAFAdAFAdAFAdA | GBeBGBeBGBeBGBeB | z2e2c2a2e2c2e2z2 | z2A2F2d2A2F2A2z2 | z2B2G2e2B2G2B2z2 | z2c2A2f2c2A2c2z2 | z2A2F2d2A2F2A2z2 | z2B2G2e2B2G2B2z2 | z16 | z16 |]
+V:PN inst=piano gain=0.42
+[Ace]16 | [Ace]16 | [DFA]16 | A2c2e2a2 [FAc]8 | [DFA]16 | [EGB]16 | A2c2e2a2 [Ace]8 | [EGB]16 | A2c2e2a2 [Ace]8 | [FAc]16 | [DFA]16 | A2c2e2a2 [Ace]8 | [EGB]16 | [FAc]16 | [DFA]16 | A2c2e2a2 [FAc]8 | [DFA]16 | [B,DF]16 | [C^EG]16 | z16 | A2c2e2a2 [Ace]8 | [FAc]16 | [DFA]16 | [EGB]16 | [Ace]16 | A2c2e2a2 [DFA]8 | [Ace]16 | [EGB]16 | [Ace]16 | A2c2e2a2 [Ace]8 | [EGB]16 | A2c2e2a2 [FAc]8 | [DFA]16 | [EGB]16 | A2c2e2a2 [Ace]8 | [DFA]16 | [EGB]16 | A2c2e2a2 [FAc]8 | [DFA]16 | [EGB]16 | [A,EAc]16 | [A,EAc]16 |]
+V:ST inst=strings gain=0.34
+z16 | z16 | z16 | z16 | z16 | z16 | [Ace]16 | [EGB]16 | [Ace]16 | [FAc]16 | [DFA]16 | [Ace]16 | [EGB]16 | [FAc]16 | [DFA]16 | [FAc]16 | [DFA]16 | [B,DF]16 | [C^EG]16 | !pp![EGB]16 | [Ace]16 | [FAc]16 | [DFA]16 | [EGB]16 | [Ace]16 | [DFA]16 | [Ace]16 | [EGB]16 | [Ace]16 | [Ace]16 | [EGB]16 | [FAc]16 | [DFA]16 | [EGB]16 | [Ace]16 | [DFA]16 | [EGB]16 | [FAc]16 | [DFA]16 | [EGB]16 | [Ace]16 | [Ace]16 |]
+V:PZ inst=pizz gain=0.55
+z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | A,,4 z4 A,,4 z4 | F,,4 z4 F,,4 z4 | D,,4 z4 D,,4 z4 | A,,4 z4 A,,4 z4 | E,,4 z4 E,,4 z4 | F,,4 z4 F,,4 z4 | D,,4 z4 D,,4 z4 | F,,4 z4 F,,4 z4 | D,,4 z4 D,,4 z4 | B,,,4 z4 B,,,4 z4 | C,,4 z4 C,,4 z4 | z16 | A,,4 z4 A,,4 z4 | F,,4 z4 F,,4 z4 | D,,4 z4 D,,4 z4 | E,,4 z4 E,,4 z4 | A,,4 z4 A,,4 z4 | D,,4 z4 D,,4 z4 | A,,4 z4 A,,4 z4 | E,,4 z4 E,,4 z4 | A,,4 z4 A,,4 z4 | A,,4 z4 A,,4 z4 | E,,4 z4 E,,4 z4 | F,,4 z4 F,,4 z4 | D,,4 z4 D,,4 z4 | E,,4 z4 E,,4 z4 | A,,4 z4 A,,4 z4 | D,,4 z4 D,,4 z4 | E,,4 z4 E,,4 z4 | F,,4 z4 F,,4 z4 | D,,4 z4 D,,4 z4 | E,,4 z4 E,,4 z4 | A,,8 z8 | A,,8 z8 |]
+V:DR inst=drums kit=acoustic gain=0.45
+z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | [C,,^F,,]^F,,^F,,^F,, [^C,,^F,,]^F,,^F,,^F,, [C,,^F,,]^F,,^F,,^F,, [^C,,^F,,]^F,,^F,,^F,, | [C,,^F,,]^F,,^F,,^F,, [^C,,^F,,]^F,,^F,,^F,, [C,,^F,,]^F,,^F,,^F,, [^C,,^F,,]^F,,^F,,^F,, | [C,,^F,,]^F,,^F,,^F,, [^C,,^F,,]^F,,^F,,^F,, [C,,^F,,]^F,,^F,,^F,, [^C,,^F,,]^F,,^F,,^F,, | [C,,^F,,]^F,,^F,,^F,, [^C,,^F,,]^F,,^F,,^F,, [C,,^F,,]^F,,^F,,^F,, [^C,,^F,,]^F,,^F,,^F,, | z16 | C,,4 z4 C,,4 z4 | C,,4 z4 C,,4 z4 | C,,4 z4 C,,4 z4 | C,,4 z4 C,,4 z4 | C,,4 z4 C,,4 z4 | z16 | z16 | z16 | z16 | C,,4 z4 C,,4 z4 | C,,4 z4 C,,4 z4 | C,,4 z4 C,,4 z4 | C,,4 z4 C,,4 z4 | C,,4 z4 C,,4 z4 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 |]
+</script>
+<script>
+const V = OM.vars();
+OM.music({ bpm: 112 });
+const B = (n) => OM.beat(n);
+const BAR = (n) => B((n - 1) * 4);          // start of bar n (1-based)
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+const tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+
+// crops of real captures: data-crop="file,x,y,w,h" (source px) scaled to the element's box
+$$('[data-crop]').forEach((el) => {
+  const [f, x, y, w, h] = el.dataset.crop.split(','); const W = el.offsetWidth || parseFloat(getComputedStyle(el).width);
+  const H = el.offsetHeight; const k = Math.max(W / +w, H / +h);
+  el.style.backgroundImage = `url(assets/img/${f}.png)`; el.style.backgroundSize = `${1920 * k}px auto`;
+  el.style.backgroundPosition = `${-x * k}px ${-y * k}px`;
+});
+
+// ---------- rail ----------
+const STN = ['Requirements', 'Design', 'Verify', 'Sign-off', 'Build', 'Test', 'Version'];
+STN.forEach((n, i) => { const d = document.createElement('div'); d.className = 'st'; d.id = 'st' + i; d.style.left = (330 + i * 210) + 'px';
+  d.innerHTML = `<b class="n"><span class="num">${i + 1}</span><span class="tick"></span><span class="ring"></span></b><span>${n}</span>`; $('#rail').appendChild(d); });
+const done = (i, t) => { tl.to(`#st${i} .tick`, { opacity: 1, duration: .25 }, t).to(`#st${i} .ring`, { opacity: 0, duration: .2 }, t)
+  .to(`#st${i} span:last-child`, { color: '#0E1726', duration: .2 }, t).to('#fill', { scaleX: i / 6, duration: .4, ease: 'power2.out' }, t); OM.sfx('pop', t, { gain: .35 }); };
+const active = (i, t) => { tl.fromTo(`#st${i} .ring`, { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .35, ease: 'back.out(2)', immediateRender: false }, t)
+  .to(`#st${i} span:last-child`, { color: V.accent, fontWeight: 600, duration: .2 }, t); };
+
+// ---------- captions ----------
+const VO = [[.35,'Any AI can build you an app in minutes.',2.6],[6.6,'Getting it to production still takes months.',2.32],[9.35,"Because production isn't a prototype. It's a process.",3.53],
+ [13.15,"Kissflow's Agentic App Builder runs that process — every step of it.",3.95],[17.4,'It starts with your requirements. Agents read the BRD and map every role, rule and journey.',5.94],
+ [23.8,'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.',5.85],
+ [32.3,'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula. It fixes them — and checks again.',8.36],
+ [43.1,"What you get isn't just an app. It's a Blueprint.",2.93],[47.0,'Nine documents your business, IT and auditors can read — before a single screen exists.',5.25],
+ [53.8,'Every decision is logged. Every open question is asked. Nothing gets built until you say so.',6.22],
+ [62.4,'Then it builds — in your own Kissflow development environment, with your permissions — and tests every journey, for every role.',7.43],
+ [73.1,'Every build is a version. Nothing reaches production on its own.',3.85],[80.0,'Fast — because nothing is skipped.',2.41]];
+if (V.captions) VO.forEach(([s, txt, d]) => {
+  tl.call(() => { $('#capt').textContent = txt; }, null, s).set('#capt', { textContent: txt }, s)
+    .fromTo('#capt', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .2, immediateRender: false }, s)
+    .to('#capt', { opacity: 0, duration: .2 }, s + d + .15);
+});
+
+// ---------- HOOK (bars 1–3) ----------
+tl.addLabel('scene:hook', 0);
+const ask = 'Create an insurance brokerage app'; const typed = { n: ask.length - 6 };
+$('#typed').textContent = ask.slice(0, typed.n);
+tl.fromTo('#hook .prompt', { scale: 1.06, y: 10 }, { scale: 1, y: 0, duration: 1.1, ease: 'expo.out' }, 0)
+  .to(typed, { n: ask.length, duration: .35, ease: 'none', onUpdate: () => { $('#typed').textContent = ask.slice(0, Math.round(typed.n)); } }, .1)
+  .fromTo('#go', { scale: 1 }, { scale: .92, duration: .08, yoyo: true, repeat: 1, ease: 'power1.inOut', immediateRender: false }, B(2) - .08);
+OM.sfx('click', B(2));
+tl.set('#hook .prompt', { opacity: 0 }, B(2)).set('#stream', { opacity: 1 }, B(2))
+  .fromTo('#lines', { y: 0 }, { y: -560, duration: B(6), ease: 'none', immediateRender: false }, B(2))
+  .fromTo('#stream', { scale: 1 }, { scale: 1.12, duration: B(4), ease: 'power2.inOut', immediateRender: false }, B(4));
+OM.sfx('hit', B(2), { gain: .4 }); OM.sfx('tick', B(4), { gain: .4 }); OM.sfx('tick', B(6), { gain: .4 });
+tl.set('#stream', { opacity: 0 }, B(8)).fromTo('#ready', { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: .4, ease: 'back.out(1.8)', immediateRender: false }, B(8));
+OM.sfx('chime', B(8), { gain: .5 });
+tl.to('#ready', { scale: 1.08, duration: BAR(4) - B(8) - .4, ease: 'none' }, B(8) + .4);
+
+// ---------- PROBLEM (bars 4–6) ----------
+tl.addLabel('scene:problem', BAR(4));
+tl.set('#hook', { opacity: 0 }, BAR(4)).set('#problem', { opacity: 1 }, BAR(4));
+const months = ['MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP'];
+months.slice().reverse().forEach((m) => { const p = document.createElement('div'); p.className = 'page'; p.innerHTML = `<b>${m}</b><small>STILL WAITING</small>`; $('#cal').appendChild(p); });
+const pages = $$('#cal .page').reverse(); // pages[0] = MAR on top
+tl.fromTo('#cal', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'expo.out', immediateRender: false }, BAR(4))
+  .fromTo('#stall', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .4, immediateRender: false }, BAR(4) + B(1));
+for (let i = 0; i < 6; i++) { const t = BAR(4) + B(2 + i); tl.to(pages[i], { rotateX: 100, opacity: 0, duration: .32, ease: 'power2.in' }, t); OM.sfx('whip', t, { gain: .25 }); }
+tl.to(['#cal', '#stall'], { opacity: 0, y: -30, duration: .3, ease: 'power2.in' }, BAR(5) + B(4) - .3);
+const words = (sel, html) => { $(sel).innerHTML = html; };
+words('#l1', `<span class="m"><span class="w">Production</span></span> <span class="m"><span class="w">isn't</span></span> <span class="m"><span class="w">a</span></span> <span class="m"><span class="w">prototype.</span></span>`);
+words('#l2', `<span class="m"><span class="w">It's</span></span> <span class="m"><span class="w">a</span></span> <span class="m"><span class="w"><em>process.</em></span></span>`);
+gsap.set(['#l1 .w', '#l2 .w'], { yPercent: 140 });
+tl.to('#l1 .w', { yPercent: 0, duration: .5, stagger: .14, ease: 'expo.out' }, 9.75)
+  .to('#l2 .w', { yPercent: 0, duration: .45, stagger: .12, ease: 'expo.out' }, 11.35);
+OM.sfx('thud', 11.6, { gain: .55 });
+
+// ---------- SPINE (bars 7–8) ----------
+tl.addLabel('scene:spine', BAR(7));
+tl.to('#problem', { opacity: 0, duration: .25 }, BAR(7) - .25)
+  .set('#rail', { opacity: 1, y: 390, scale: 1.25 }, BAR(7))
+  .fromTo('#rail .track', { scaleX: 0, transformOrigin: '0 50%' }, { scaleX: 1, duration: .5, ease: 'expo.out', immediateRender: false }, BAR(7));
+OM.sfx('whoosh', BAR(7) - .1, { gain: .4 }); OM.sfx('thud', BAR(7), { gain: .5 });
+STN.forEach((_, i) => { tl.fromTo(`#st${i}`, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .35, ease: 'back.out(2)', immediateRender: false }, BAR(7) + B(.5 * i + .5)); OM.sfx('tick', BAR(7) + B(.5 * i + .5), { gain: .25 }); });
+gsap.set('.st', { opacity: 0 });
+tl.to('#rail', { scale: 1.36, duration: BAR(9) - .3 - (BAR(7) + B(4)), ease: 'none' }, BAR(7) + B(4));
+
+// ---------- WORLD + camera ----------
+gsap.set('#world', { opacity: 0 });
+const cam = OM.camera('#world');
+cam.set({ focus: [960, 540], zoom: 1 });
+const at = (i) => ({ focus: [i * 2000 + 960, 540], zoom: 1 });
+
+// ① REQUIREMENTS (bars 9–11)
+tl.addLabel('scene:requirements', BAR(9));
+tl.to('#rail', { y: 0, scale: .8, duration: .7, ease: 'expo.inOut' }, BAR(9) - .3)
+  .to('#world', { opacity: 1, duration: .35 }, BAR(9));
+active(0, BAR(9));
+tl.fromTo('#p1 .chat', { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: .6, ease: 'expo.out', immediateRender: false }, BAR(9) + B(1))
+  .fromTo('#p1 .r1', { opacity: 0 }, { opacity: 1, duration: .3, immediateRender: false }, BAR(9) + B(1))
+  .fromTo('#p1 .r2', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .4, immediateRender: false }, BAR(10))
+  .fromTo('#p1brd', { x: 80, opacity: 0, rotate: 4 }, { x: 0, opacity: 1, rotate: 0, duration: .7, ease: 'expo.out', immediateRender: false }, BAR(9) + B(3));
+OM.sfx('whoosh', BAR(9) + B(3), { gain: .3 });
+$$('#p1 .cnt').forEach((el, i) => { const o = { v: 0 }; tl.to(o, { v: +el.dataset.to, duration: .7, ease: 'expo.out', onUpdate: () => { el.textContent = Math.round(o.v); } }, BAR(10) + B(1) + i * B(.5)); });
+cam.to(tl, BAR(9) + .4, { focus: [960, 560], zoom: 1.05, duration: BAR(11) - BAR(9) - .4, ease: 'none' });
+cam.to(tl, BAR(11), { fit: '#p1brd', pad: 120, duration: 1.4, ease: 'power2.inOut' });
+cam.to(tl, BAR(11) + 1.4, { fit: '#p1brd', pad: 70, duration: BAR(12) - .45 - BAR(11) - 1.4, ease: 'none' });
+
+// ② DESIGN (bars 12–15)
+tl.addLabel('scene:design', BAR(12));
+done(0, BAR(12)); active(1, BAR(12));
+cam.to(tl, BAR(12) - .45, { ...at(1), duration: .9, ease: 'expo.inOut' });
+OM.sfx('whoosh', BAR(12) - .35, { gain: .35 });
+$$('#p2 .lane').forEach((el, i) => { const t = BAR(12) + B(1 + i * .5); tl.fromTo(el, { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: .6, ease: 'expo.out', immediateRender: false }, t);
+  tl.fromTo(el.querySelector('.tick'), { scale: 0 }, { scale: 1, duration: .3, ease: 'back.out(3)', immediateRender: false }, BAR(14) + B(i)); OM.sfx('tick', BAR(14) + B(i), { gain: .3 }); });
+gsap.set('#p2 .lane .tick', { scale: 0 });
+cam.to(tl, BAR(12) + .5, { focus: [2000 + 960, 600], zoom: 1.12, duration: BAR(16) - .4 - BAR(12) - .5, ease: 'none' });
+
+// ③ VERIFY — the burst (bars 16–19)
+tl.addLabel('scene:verify', BAR(16));
+done(1, BAR(16)); active(2, BAR(16));
+cam.to(tl, BAR(16) - .4, { ...at(2), duration: .7, ease: 'expo.inOut' });
+const beats = [3, 2, 2, 2, 2, 1, 1, 2];
+const verdict = ['scan', 'x', 'scan', 'x', 'scan', 'ok', 'ok', ''];
+let t = BAR(16);
+beats.forEach((b, i) => {
+  const el = `#v${i + 1}`;
+  tl.set(el, { opacity: 1 }, t); if (i) tl.set(`#v${i}`, { opacity: 0 }, t);
+  tl.fromTo(`${el} .crop`, { scale: 1.3, x: 60 }, { scale: 1, x: 0, duration: B(b), ease: 'power2.out', immediateRender: false }, t)
+    .fromTo(`${el} .say`, { x: -30 }, { x: 0, duration: .35, ease: 'expo.out', immediateRender: false }, t);
+  tl.set('#slot', { attr: { class: 'slot ' + verdict[i] } }, t).fromTo('#slot', { scale: .5 }, { scale: 1, duration: .25, ease: 'back.out(3)', immediateRender: false }, t);
+  OM.sfx(verdict[i] === 'x' ? 'glitch' : 'hit', t, { gain: .4, pitch: 1 + i * .04 });
+  t += B(b);
+});
+tl.fromTo('#v8 .pill', { scale: .7 }, { scale: 1, duration: .4, ease: 'back.out(2)', immediateRender: false }, t - B(2));
+OM.sfx('chime', t - B(2), { gain: .6 });
+tl.fromTo('#v8 .pill', { scale: 1 }, { scale: 1.14, duration: BAR(21) - t, ease: 'none', immediateRender: false }, t);
+done(2, t - B(2));
+// STOP (bar 20)
+tl.addLabel('scene:stop', BAR(20));
+OM.sfx('reverse', BAR(21), { dur: 1.1, gain: .5 });
+
+// ---------- HERO — Blueprint in space (bars 21–25) ----------
+tl.addLabel('scene:blueprint', BAR(21));
+const TABS = [['c10-bp-BRD', 'BRD'], ['c11-bp-Data_Model', 'Data Model'], ['c12-bp-Data_Fields', 'Data & Fields'], ['c13-bp-Business_Logic', 'Business Logic'], ['c14-bp-Workflows', 'Workflows'], ['c15-bp-Roles_Permissions', 'Roles & Permissions'], ['c16-bp-Pages_Nav', 'Pages & Nav'], ['c17-bp-Automations', 'Automations'], ['c18-bp-Decisions', 'Decisions']];
+TABS.forEach(([f, n], k) => { const s = document.createElement('div'); s.className = 'sh'; s.id = 'sh' + k;
+  s.innerHTML = `<div class="im" style="background-image:url(assets/img/${f}.png);background-size:${1920 * .72}px auto;background-position:${-470 * .72}px ${-150 * .72}px"></div><div class="lb"><i>${k + 1}</i>${n}</div>`;
+  $('#stack').insertBefore(s, $('#scan')); });
+const D = 85; // z gap
+tl.set('#world', { opacity: 0 }, BAR(21)).set('#rail', { opacity: 0 }, BAR(21)).set('#space', { opacity: 1 }, BAR(21));
+// start: flat, BRD fills frame, sheets together
+tl.fromTo('#stack', { rotateX: 0, rotateZ: 0, z: 520, x: 0, y: 40 }, { rotateX: 52, rotateZ: -26, z: -220, x: 230, y: -150, duration: 2.0, ease: 'expo.out', immediateRender: false }, BAR(21));
+TABS.forEach((_, k) => tl.fromTo('#sh' + k, { z: 0 }, { z: -k * D, duration: 1.8, ease: 'expo.out', immediateRender: false }, BAR(21) + k * .03));
+OM.sfx('impact', BAR(21), { gain: .7 }); OM.sfx('subdrop', BAR(21), { gain: .6 });
+tl.to('#stack', { rotateZ: -40, rotateX: 46, x: 170, duration: BAR(25) - .2 - BAR(21) - 2, ease: 'sine.inOut' }, BAR(21) + 2);
+tl.fromTo('#heroT', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .5, ease: 'expo.out', immediateRender: false }, 45.0)
+  .to('#heroT', { opacity: 0, duration: .3 }, 50.6);
+// scan plane sweeps down through the sheets; halts on Business Logic (k=3)
+tl.set('#scan', { opacity: 1, z: 30 }, BAR(23) - .2)
+  .to('#scan', { z: -3 * D - 10, duration: 1.2, ease: 'power2.inOut' }, BAR(23))
+  .fromTo('#flag', { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: .35, ease: 'back.out(2)', immediateRender: false }, BAR(23) + 1.2)
+  .to('#scan', { z: -8 * D - 10, duration: 1.6, ease: 'power2.inOut' }, BAR(23) + 2.6)
+  .to(['#scan', '#flag'], { opacity: 0, duration: .3 }, BAR(25) - .4);
+OM.sfx('whoosh', BAR(23), { gain: .3 }); OM.sfx('tick', BAR(23) + 1.2, { gain: .5 });
+// land flat onto the BRD
+tl.to('#stack', { rotateX: 0, rotateZ: 0, z: 300, x: 0, y: 20, duration: 1.0, ease: 'expo.inOut' }, BAR(25) - .2);
+TABS.forEach((_, k) => tl.to('#sh' + k, { z: 0, duration: .9, ease: 'expo.inOut' }, BAR(25) - .2));
+OM.sfx('thud', BAR(25) + .8, { gain: .5 });
+
+// ---------- ④ SIGN-OFF (bars 26–29) ----------
+tl.addLabel('scene:signoff', BAR(26));
+cam.to(tl, BAR(26) - .05, { ...at(3), duration: .01 });
+tl.to('#space', { opacity: 0, duration: .35 }, BAR(26)).set('#world', { opacity: 1 }, BAR(26)).set('#rail', { opacity: 1 }, BAR(26));
+active(3, BAR(26));
+tl.fromTo('#p4brd', { scale: 1.06 }, { scale: 1, duration: .6, ease: 'expo.out', immediateRender: false }, BAR(26));
+cam.to(tl, BAR(26) + B(2), { fit: '#badge', pad: 220, duration: .8, ease: 'expo.inOut' });
+OM.sfx('pop', BAR(26) + B(2) + .6, { gain: .4 });
+cam.to(tl, BAR(28) - .5, { ...at(3), duration: .8, ease: 'expo.inOut' });
+cam.to(tl, BAR(28) + .35, { focus: [6000 + 1000, 560], zoom: 1.06, duration: BAR(30) + B(1) - BAR(28) - .4, ease: 'none' });
+tl.fromTo('#dec', { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: .5, ease: 'expo.out', immediateRender: false }, BAR(28))
+  .fromTo('#gen', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'expo.out', immediateRender: false }, BAR(28) + B(2));
+OM.sfx('tick', BAR(28), { gain: .3 });
+
+// ---------- ⑤ BUILD + ⑥ TEST (bars 30–34) ----------
+tl.addLabel('scene:build', BAR(30));
+tl.fromTo('#genbtn', { scale: 1 }, { scale: .9, duration: .08, yoyo: true, repeat: 1, immediateRender: false }, BAR(30))
+  .fromTo('#ripple', { opacity: .9, scale: .5 }, { opacity: 0, scale: 6, duration: .7, ease: 'expo.out', immediateRender: false }, BAR(30));
+OM.sfx('click', BAR(30)); OM.sfx('hit', BAR(30), { gain: .5 });
+done(3, BAR(30)); active(4, BAR(30) + B(1));
+cam.to(tl, BAR(30) + B(1), { ...at(4), duration: .8, ease: 'expo.inOut' });
+tl.fromTo('#p5 .bld', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: .6, ease: 'expo.out', immediateRender: false }, BAR(30) + B(2));
+$$('#p5 .cnt').forEach((el, i) => { const o = { v: 0 }; tl.to(o, { v: +el.dataset.to, duration: .8, ease: 'expo.out', onUpdate: () => { el.textContent = Math.round(o.v); } }, BAR(31) + i * B(.5)); });
+tl.addLabel('scene:test', BAR(32));
+done(4, BAR(32)); active(5, BAR(32));
+cam.to(tl, BAR(32) - .4, { ...at(5), duration: .8, ease: 'expo.inOut' });
+tl.fromTo('#p6 .tst', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: .6, ease: 'expo.out', immediateRender: false }, BAR(32));
+$$('#p6 .r .tick').forEach((el, i) => { const t = BAR(33) + B(.5 * i); tl.to(el, { opacity: 1, scale: 1, duration: .25, ease: 'back.out(3)' }, t); OM.sfx('tick', t, { gain: .3 }); });
+
+// ---------- ⑦ VERSION (bars 35–37) ----------
+tl.addLabel('scene:version', BAR(35));
+done(5, BAR(35)); active(6, BAR(35));
+cam.to(tl, BAR(35) - .4, { ...at(6), duration: .8, ease: 'expo.inOut' });
+tl.fromTo('#p7 .ver', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'expo.out', immediateRender: false }, BAR(35))
+  .fromTo('#vlist li', { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: .3, stagger: B(.5), immediateRender: false }, BAR(35) + B(1))
+  .fromTo('#prod', { opacity: 0, scale: .94 }, { opacity: 1, scale: 1, duration: .5, ease: 'expo.out', immediateRender: false }, BAR(36) + B(2));
+OM.sfx('pop', BAR(35), { gain: .4 }); OM.sfx('thud', BAR(36) + B(2) + .3, { gain: .45 });
+
+// slow drifts through every hold (no dead frames)
+tl.to('#p5 .bld', { scale: 1.06, duration: BAR(32) - .5 - BAR(31), ease: 'none' }, BAR(31));
+tl.to('#p6 .tst', { scale: 1.05, duration: BAR(35) - .5 - BAR(32) - .6, ease: 'none' }, BAR(32) + .6);
+tl.to(['#p7 .ver', '#prod'], { scale: 1.05, duration: BAR(38) - BAR(35) - .5, ease: 'none' }, BAR(35) + .5);
+// ---------- RESOLVE (bars 38–40) ----------
+tl.addLabel('scene:resolve', BAR(38));
+done(6, BAR(38));
+tl.to('#world', { opacity: 0, duration: .5 }, BAR(38))
+  .to('#rail', { y: 390, scale: 1.25, duration: 1.2, ease: 'expo.inOut' }, BAR(38));
+STN.forEach((_, i) => { tl.fromTo(`#st${i} .n`, { scale: 1 }, { scale: 1.15, duration: .15, yoyo: true, repeat: 1, immediateRender: false }, BAR(39) + B(.5 * i)); });
+tl.to('#rail', { scale: 1.4, duration: BAR(41) - BAR(38) - 1.2, ease: 'none' }, BAR(38) + 1.2);
+
+// ---------- END (bars 41–42) ----------
+tl.addLabel('scene:end', BAR(41));
+$('#tg').innerHTML = V.tagline.replace('exactly that.', '<em>exactly that.</em>');
+tl.set('#end', { opacity: 1 }, BAR(41)).set('#rail', { opacity: 0 }, BAR(41))
+  .fromTo('#tg', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .7, ease: 'expo.out', immediateRender: false }, BAR(41))
+  .fromTo('#end .lk', { opacity: 0 }, { opacity: 1, duration: .5, immediateRender: false }, BAR(41) + B(2))
+  .fromTo('#end', { scale: 1 }, { scale: 1.04, duration: 90 - BAR(41), ease: 'none', immediateRender: false }, BAR(41));
+OM.sfx('chime', BAR(41), { gain: .5 });
+tl.to({}, { duration: .01 }, 90 - .01 + (V.endHold - 2.2));
+
+// ---------- animated pointer: a pure function of time ----------
+{
+  const SIZE = 44, REST = -135, TIP = [26 * SIZE / 28, 14 * SIZE / 28];
+  const film = $('#film'), ptr = $('#ptr'), ring = $('#ptrRing');
+  const centre = (sel) => { const f = film.getBoundingClientRect(), k = f.width / 1920, r = $(sel).getBoundingClientRect();
+    return [(r.left + r.width / 2 - f.left) / k, (r.top + r.height / 2 - f.top) / k]; };
+  const P = (p) => typeof p === 'string' ? centre(p) : p;
+  const spring = (u) => 1 - Math.exp(-7 * u) * Math.cos(7 * u);          // curves in, slight overshoot, settles
+  const shots = [  // window, the move inside it, the click
+    { on: 0, off: B(2) + .25, t0: .2, t1: .95, from: [1240, 830], to: '#go', click: B(2) },
+    { on: BAR(28) + B(2) + .3, off: BAR(30) + .7, t0: BAR(29), t1: BAR(29) + 1.3, from: [1480, 1000], to: '#genbtn', click: BAR(30) },
+    { on: BAR(35) + .05, off: BAR(35) + B(1) + .8, t0: BAR(35) + .1, t1: BAR(35) + B(1) - .25, from: [1250, 930], to: '.sel', click: BAR(35) + B(1) - .05 },
+  ];
+  OM.sfx('click', shots[2].click);
+  const draw = (t) => {
+    const s = shots.find((x) => t >= x.on && t <= x.off);
+    if (!s) { ptr.style.opacity = 0; ring.style.opacity = 0; return; }
+    const a = P(s.from), b = P(s.to);
+    const u = Math.min(1, Math.max(0, (t - s.t0) / (s.t1 - s.t0)));
+    const e = t < s.t0 ? 0 : spring(u);
+    const x = a[0] + (b[0] - a[0]) * e, y = a[1] + (b[1] - a[1]) * e;
+    const head = Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI;
+    const w = t < s.t0 || u >= 1 ? 0 : u < .12 ? u / .12 : u > .6 ? Math.max(0, 1 - (u - .6) / .3) : 1;
+    const ang = REST + ((((head - REST) + 540) % 360) - 180) * w;
+    ptr.style.opacity = Math.min(1, (t - s.on) / .2, (s.off - t) / .2);
+    ptr.style.transform = `translate(${x}px, ${y}px) rotate(${ang}deg) translate(${-TIP[0]}px, ${-TIP[1]}px)`;
+    const p = (t - s.click) / .42;
+    if (p >= 0 && p <= 1) { ring.style.opacity = .9 * (1 - p); ring.style.transform = `translate(${x}px, ${y}px) scale(${.4 + 1.2 * p})`; }
+    else ring.style.opacity = 0;
+  };
+  OM.clock(tl, draw, tl.duration());
+  OM.region('pointer', (t) => { const s = shots.find((x) => t >= x.on && t <= x.off); return s ? [...P(s.to).map((v) => v - 30), 60, 60] : null; }, 'pointer');
+}
+
+window.__timelines['film'] = tl;
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body{background:radial-gradient(1400px 900px at 62% 40%,#FFFFFF 0%,#EDF5FE 55%,#DCE8F8 100%)}
+.chat{position:absolute;left:80px;top:150px;width:520px;height:780px;background:#fff;border-radius:24px;box-shadow:0 30px 80px rgba(31,80,160,.12);padding:40px 38px}
+.chat .hd{display:flex;align-items:center;gap:12px;font:600 22px Graphik;margin-bottom:34px}
+.chat .hd img{height:30px}
+.ln{font:400 23px/1.45 Graphik;color:#5B6678;margin-bottom:22px}
+.ln.on{color:#0E1726}
+.ok{display:inline-flex;align-items:center;gap:12px;background:#E9F6EA;color:#2D7D33;font:600 23px Graphik;padding:14px 20px;border-radius:14px}
+.ok i{width:26px;height:26px;border-radius:50%;background:#4AA147;display:inline-block;position:relative}
+.ok i:after{content:"";position:absolute;left:8px;top:5px;width:7px;height:12px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+.rail{position:absolute;left:690px;top:170px;width:1150px;height:120px}
+.rail .line{position:absolute;left:30px;right:30px;top:30px;height:4px;background:#C9D9F0;border-radius:2px}
+.rail .done{position:absolute;left:30px;width:520px;top:30px;height:4px;background:#4AA147;border-radius:2px}
+.st{position:absolute;top:0;width:150px;margin-left:-75px;text-align:center}
+.st b{display:block;width:64px;height:64px;margin:0 auto 14px;border-radius:50%;background:#fff;border:4px solid #C9D9F0;position:relative}
+.st.d b{border-color:#4AA147;background:#4AA147}
+.st.d b:after{content:"";position:absolute;left:20px;top:10px;width:12px;height:24px;border:solid #fff;border-width:0 4px 4px 0;transform:rotate(45deg)}
+.st.a b{border-color:#1F80FF;box-shadow:0 0 0 12px rgba(31,128,255,.15)}
+.st span{font:500 21px Graphik;color:#5B6678}.st.a span{color:#1F80FF;font-weight:600}.st.d span{color:#0E1726}
+.doc{left:700px;top:360px;width:1130px;height:560px;background-image:url(../materials/screens/c09-bp-BRD-detailed.png);background-size:1574px auto;background-position:-555px -400px;box-shadow:0 40px 90px rgba(31,80,160,.18),0 0 0 3px #1F80FF}
+.tag{position:absolute;left:1500px;top:330px;background:#1F80FF;color:#fff;font:600 20px Graphik;padding:12px 18px;border-radius:12px}
+.h{position:absolute;left:80px;top:62px;font:600 56px/1 Graphik;letter-spacing:-.01em}
+.h em{font-style:normal;color:#1F80FF}
+.k{position:absolute;left:84px;top:40px}
+.chat{height:auto}
+.brd{position:absolute;left:700px;top:360px;width:1130px;background:#fff;border-radius:24px;padding:44px 48px;box-shadow:0 40px 90px rgba(31,80,160,.16),0 0 0 3px #1F80FF}
+.bk{font:600 17px Graphik;letter-spacing:.14em;color:#1F80FF}
+.bt{font:600 44px/1.15 Graphik;margin:14px 0 18px;letter-spacing:-.01em}
+.bb{display:flex;gap:12px}.bb span{font:600 19px Graphik;padding:9px 16px;border-radius:999px}
+.dr{background:#FFF4E5;color:#B85C00;border:1.5px solid #F5B66B}.vr{border:1.5px solid #D5DCE6}
+.bs{font:400 21px Graphik;color:#5B6678;margin:20px 0 28px}
+.stats{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-bottom:28px}
+.stats div{border:1.5px solid #E3E9F2;border-radius:14px;padding:14px 14px;font:400 16px Graphik;color:#5B6678}
+.stats b{display:block;font:600 34px Graphik;color:#0E1726;margin-bottom:2px}
+.sc{font:600 21px Graphik;margin-bottom:10px}.sc i{font-style:normal;font-weight:400;color:#8893A4;font-size:17px}
+.sl{font:400 19px/1.6 Graphik;color:#3B4556;padding-left:22px;position:relative}.sl:before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;border-radius:50%;background:#3B4556}
+</style></head><body>
+<div class="h">A gate after <em>every</em> step.</div>
+<div class="chat"><div class="hd"><img src="../materials/brand/kissflow-logo.svg">AI Builder</div>
+<p class="ln">Reading the BRD now to understand the roles, policies, and workflows before planning the build.</p>
+<p class="ln">Full assembly succeeded. Now running the verifier.</p>
+<p class="ln">Now fixing the terminal-step conditions and the bad formula.</p>
+<p class="ln on">Now re-running verify.</p>
+<span class="ok"><i></i>Gate passes clean.</span></div>
+<div class="rail"><div class="line"></div><div class="done"></div>
+<div class="st d" style="left:30px"><b></b><span>Requirements</span></div>
+<div class="st d" style="left:203px"><b></b><span>Design</span></div>
+<div class="st d" style="left:376px"><b></b><span>Verify</span></div>
+<div class="st a" style="left:549px"><b></b><span>Sign-off</span></div>
+<div class="st" style="left:722px"><b></b><span>Build</span></div>
+<div class="st" style="left:895px"><b></b><span>Test</span></div>
+<div class="st" style="left:1068px"><b></b><span>Version</span></div></div>
+<div class="brd">
+<div class="bk">BUSINESS REQUIREMENTS · FULL DOCUMENT</div>
+<div class="bt">Placewell — Broking Operations</div>
+<div class="bb"><span class="dr">Draft — awaiting sign-off</span><span class="vr">Version 1.0</span></div>
+<div class="bs">Prepared for customer review and sign-off. Section references map to the design in the other tabs.</div>
+<div class="stats">
+<div><b>20</b>flows</div><div><b>8</b>processes</div><div><b>12</b>data forms</div><div><b>24</b>lists</div><div><b>8</b>roles</div><div><b>75</b>permissions</div><div><b>17</b>pages</div></div>
+<div class="sc"><b>Out of scope</b> <i>(confirm at sign-off)</i></div>
+<div class="sl">Integrations with external / third-party systems unless separately specified</div>
+<div class="sl">Migration of historical / legacy data</div>
+</div>
+</body></html>

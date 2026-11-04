@@ -1,0 +1,21 @@
+# Render cache and local state
+.om/
+.remember/
+.DS_Store
+node_modules/
+*.log
+
+# Raw frame dumps (regenerable from the mp4s alongside them)
+materials/rec2/tour/
+materials/rec2/build/
+materials/rec2/blueprint/
+materials/rec2/chk/
+
+# Over GitHub's 100 MB file limit
+materials/ref/v7.mp4
+
+# Renders: keep only the approved cut and the latest cut
+out/*
+!out/kissflow-blueprint-film-v17-final.mp4
+!out/kissflow-blueprint-film-v19-final.mp4
+!out/kissflow-blueprint-film-v19-preview.mp4

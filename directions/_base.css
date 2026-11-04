@@ -1,0 +1,7 @@
+@font-face{font-family:Graphik;src:url(../materials/fonts/graphik-regular.ttf);font-weight:400}
+@font-face{font-family:Graphik;src:url(../materials/fonts/graphik-medium.ttf);font-weight:500}
+@font-face{font-family:Graphik;src:url(../materials/fonts/graphik-semibold.ttf);font-weight:600}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:Graphik,sans-serif;color:#0E1726}
+.kick{font:500 20px/1 Graphik;letter-spacing:.22em;text-transform:uppercase;color:#1F80FF}
+.shot{position:absolute;background-repeat:no-repeat;border-radius:18px;overflow:hidden}

@@ -1,0 +1,7 @@
+@font-face{font-family:Graphik;src:url(../assets/fonts/graphik-regular.ttf);font-weight:400}
+@font-face{font-family:Graphik;src:url(../assets/fonts/graphik-medium.ttf);font-weight:500}
+@font-face{font-family:Graphik;src:url(../assets/fonts/graphik-semibold.ttf);font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}html,body{width:1920px;height:1080px;overflow:hidden;font-family:Graphik}
+.logo{position:absolute;height:60px}
+.sheet{position:absolute;inset:0;border-radius:18px;background-color:#fff;background-repeat:no-repeat;background-size:1382px auto;background-position:-338px -108px;box-shadow:0 0 0 2px rgba(31,128,255,.35),0 30px 60px rgba(20,60,130,.2)}
+.cast{position:absolute;filter:drop-shadow(0 24px 40px rgba(0,0,0,.28))}

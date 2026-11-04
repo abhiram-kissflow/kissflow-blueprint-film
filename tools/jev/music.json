@@ -1,0 +1,195 @@
+{
+ "state": {
+  "film": {
+   "product": "Kissflow Agentic App Builder \u2014 an enterprise low-code platform where AI agents build business apps from a requirements document, with governance at every step",
+   "audience": "enterprise IT leaders and business buyers who just had a sales call",
+   "purpose": "a 90-second product film sent after sales calls and posted on LinkedIn",
+   "tone_wanted": "professional, premium, trustworthy, confident; calm authority with one energetic burst in the middle",
+   "narration": "a soft young female voice-over speaks for about 70 of the 90 seconds",
+   "structure": "hook 0-6s; problem 6-13s; seven-step process 13-42s with a fast verification montage at 32-41s; one beat of silence at 41s; hero reveal at 43s; calmer close 54-90s",
+   "user_feedback_on_previous_music": "The previous marimba score was called 'funny' and 'not professional'."
+  }
+ },
+ "questions": {
+  "cinematic_corporate__fit": {
+   "type": "score",
+   "instructions": "How well does this music suit the film in `film`? Music: Modern cinematic corporate score: soft felt-piano motif, warm string pads, subtle pulsing synth bass, light electronic percussion entering mid-way, builds to an uplifting but restrained peak.",
+   "criteria": [
+    "The music would feel wrong for this film and undercut the brand",
+    "The music is acceptable but feels generic or slightly off in tone",
+    "The music suits the film well",
+    "The music would make the film feel premium and polished for enterprise buyers"
+   ]
+  },
+  "cinematic_corporate__playful": {
+   "type": "noul",
+   "instructions": "Would an enterprise IT buyer hear this music as playful or unserious? Music: Modern cinematic corporate score: soft felt-piano motif, warm string pads, subtle pulsing synth bass, light electronic percussion entering mid-way, builds to an uplifting but restrained peak.",
+   "criteria": {
+    "true": "The music sounds whimsical, quirky or casual, like a kids' or lifestyle ad",
+    "false": "The music sounds serious and businesslike"
+   }
+  },
+  "cinematic_corporate__voice_clash": {
+   "type": "noul",
+   "instructions": "Would this music compete for attention with a soft spoken voice-over? Music: Modern cinematic corporate score: soft felt-piano motif, warm string pads, subtle pulsing synth bass, light electronic percussion entering mid-way, builds to an uplifting but restrained peak.",
+   "criteria": {
+    "true": "Busy melody or loud percussion would distract from the words",
+    "false": "The music would sit underneath the voice without distracting"
+   }
+  },
+  "cinematic_corporate__arc": {
+   "type": "noul",
+   "instructions": "Can this music naturally build to an energetic montage, drop to silence, and land a big reveal, as described in `film.structure`? Music: Modern cinematic corporate score: soft felt-piano motif, warm string pads, subtle pulsing synth bass, light electronic percussion entering mid-way, builds to an uplifting but restrained peak."
+  },
+  "tech_ambient_pulse__fit": {
+   "type": "score",
+   "instructions": "How well does this music suit the film in `film`? Music: Minimal tech electronic: deep atmospheric pads, a clean arpeggiated synth pulse, a tight soft kick, glassy textures; confident and focused.",
+   "criteria": [
+    "The music would feel wrong for this film and undercut the brand",
+    "The music is acceptable but feels generic or slightly off in tone",
+    "The music suits the film well",
+    "The music would make the film feel premium and polished for enterprise buyers"
+   ]
+  },
+  "tech_ambient_pulse__playful": {
+   "type": "noul",
+   "instructions": "Would an enterprise IT buyer hear this music as playful or unserious? Music: Minimal tech electronic: deep atmospheric pads, a clean arpeggiated synth pulse, a tight soft kick, glassy textures; confident and focused.",
+   "criteria": {
+    "true": "The music sounds whimsical, quirky or casual, like a kids' or lifestyle ad",
+    "false": "The music sounds serious and businesslike"
+   }
+  },
+  "tech_ambient_pulse__voice_clash": {
+   "type": "noul",
+   "instructions": "Would this music compete for attention with a soft spoken voice-over? Music: Minimal tech electronic: deep atmospheric pads, a clean arpeggiated synth pulse, a tight soft kick, glassy textures; confident and focused.",
+   "criteria": {
+    "true": "Busy melody or loud percussion would distract from the words",
+    "false": "The music would sit underneath the voice without distracting"
+   }
+  },
+  "tech_ambient_pulse__arc": {
+   "type": "noul",
+   "instructions": "Can this music naturally build to an energetic montage, drop to silence, and land a big reveal, as described in `film.structure`? Music: Minimal tech electronic: deep atmospheric pads, a clean arpeggiated synth pulse, a tight soft kick, glassy textures; confident and focused."
+  },
+  "keynote_hybrid__fit": {
+   "type": "score",
+   "instructions": "How well does this music suit the film in `film`? Music: Product-keynote style hybrid: crisp electronic drums, plucked synths, airy pads; optimistic and polished, with a drop at the midpoint.",
+   "criteria": [
+    "The music would feel wrong for this film and undercut the brand",
+    "The music is acceptable but feels generic or slightly off in tone",
+    "The music suits the film well",
+    "The music would make the film feel premium and polished for enterprise buyers"
+   ]
+  },
+  "keynote_hybrid__playful": {
+   "type": "noul",
+   "instructions": "Would an enterprise IT buyer hear this music as playful or unserious? Music: Product-keynote style hybrid: crisp electronic drums, plucked synths, airy pads; optimistic and polished, with a drop at the midpoint.",
+   "criteria": {
+    "true": "The music sounds whimsical, quirky or casual, like a kids' or lifestyle ad",
+    "false": "The music sounds serious and businesslike"
+   }
+  },
+  "keynote_hybrid__voice_clash": {
+   "type": "noul",
+   "instructions": "Would this music compete for attention with a soft spoken voice-over? Music: Product-keynote style hybrid: crisp electronic drums, plucked synths, airy pads; optimistic and polished, with a drop at the midpoint.",
+   "criteria": {
+    "true": "Busy melody or loud percussion would distract from the words",
+    "false": "The music would sit underneath the voice without distracting"
+   }
+  },
+  "keynote_hybrid__arc": {
+   "type": "noul",
+   "instructions": "Can this music naturally build to an energetic montage, drop to silence, and land a big reveal, as described in `film.structure`? Music: Product-keynote style hybrid: crisp electronic drums, plucked synths, airy pads; optimistic and polished, with a drop at the midpoint."
+  },
+  "orchestral_epic__fit": {
+   "type": "score",
+   "instructions": "How well does this music suit the film in `film`? Music: Epic trailer orchestra: huge taiko drums, choir, brass hits, constant intensity.",
+   "criteria": [
+    "The music would feel wrong for this film and undercut the brand",
+    "The music is acceptable but feels generic or slightly off in tone",
+    "The music suits the film well",
+    "The music would make the film feel premium and polished for enterprise buyers"
+   ]
+  },
+  "orchestral_epic__playful": {
+   "type": "noul",
+   "instructions": "Would an enterprise IT buyer hear this music as playful or unserious? Music: Epic trailer orchestra: huge taiko drums, choir, brass hits, constant intensity.",
+   "criteria": {
+    "true": "The music sounds whimsical, quirky or casual, like a kids' or lifestyle ad",
+    "false": "The music sounds serious and businesslike"
+   }
+  },
+  "orchestral_epic__voice_clash": {
+   "type": "noul",
+   "instructions": "Would this music compete for attention with a soft spoken voice-over? Music: Epic trailer orchestra: huge taiko drums, choir, brass hits, constant intensity.",
+   "criteria": {
+    "true": "Busy melody or loud percussion would distract from the words",
+    "false": "The music would sit underneath the voice without distracting"
+   }
+  },
+  "orchestral_epic__arc": {
+   "type": "noul",
+   "instructions": "Can this music naturally build to an energetic montage, drop to silence, and land a big reveal, as described in `film.structure`? Music: Epic trailer orchestra: huge taiko drums, choir, brass hits, constant intensity."
+  },
+  "marimba_minimalism__fit": {
+   "type": "score",
+   "instructions": "How well does this music suit the film in `film`? Music: Steve Reich-style minimalism: interlocking marimbas, piano eighths, pizzicato bass.",
+   "criteria": [
+    "The music would feel wrong for this film and undercut the brand",
+    "The music is acceptable but feels generic or slightly off in tone",
+    "The music suits the film well",
+    "The music would make the film feel premium and polished for enterprise buyers"
+   ]
+  },
+  "marimba_minimalism__playful": {
+   "type": "noul",
+   "instructions": "Would an enterprise IT buyer hear this music as playful or unserious? Music: Steve Reich-style minimalism: interlocking marimbas, piano eighths, pizzicato bass.",
+   "criteria": {
+    "true": "The music sounds whimsical, quirky or casual, like a kids' or lifestyle ad",
+    "false": "The music sounds serious and businesslike"
+   }
+  },
+  "marimba_minimalism__voice_clash": {
+   "type": "noul",
+   "instructions": "Would this music compete for attention with a soft spoken voice-over? Music: Steve Reich-style minimalism: interlocking marimbas, piano eighths, pizzicato bass.",
+   "criteria": {
+    "true": "Busy melody or loud percussion would distract from the words",
+    "false": "The music would sit underneath the voice without distracting"
+   }
+  },
+  "marimba_minimalism__arc": {
+   "type": "noul",
+   "instructions": "Can this music naturally build to an energetic montage, drop to silence, and land a big reveal, as described in `film.structure`? Music: Steve Reich-style minimalism: interlocking marimbas, piano eighths, pizzicato bass."
+  },
+  "lofi_chill__fit": {
+   "type": "score",
+   "instructions": "How well does this music suit the film in `film`? Music: Lo-fi hip-hop chill beat with vinyl crackle and jazzy keys.",
+   "criteria": [
+    "The music would feel wrong for this film and undercut the brand",
+    "The music is acceptable but feels generic or slightly off in tone",
+    "The music suits the film well",
+    "The music would make the film feel premium and polished for enterprise buyers"
+   ]
+  },
+  "lofi_chill__playful": {
+   "type": "noul",
+   "instructions": "Would an enterprise IT buyer hear this music as playful or unserious? Music: Lo-fi hip-hop chill beat with vinyl crackle and jazzy keys.",
+   "criteria": {
+    "true": "The music sounds whimsical, quirky or casual, like a kids' or lifestyle ad",
+    "false": "The music sounds serious and businesslike"
+   }
+  },
+  "lofi_chill__voice_clash": {
+   "type": "noul",
+   "instructions": "Would this music compete for attention with a soft spoken voice-over? Music: Lo-fi hip-hop chill beat with vinyl crackle and jazzy keys.",
+   "criteria": {
+    "true": "Busy melody or loud percussion would distract from the words",
+    "false": "The music would sit underneath the voice without distracting"
+   }
+  },
+  "lofi_chill__arc": {
+   "type": "noul",
+   "instructions": "Can this music naturally build to an energetic montage, drop to silence, and land a big reveal, as described in `film.structure`? Music: Lo-fi hip-hop chill beat with vinyl crackle and jazzy keys."
+  }
+ }
+}

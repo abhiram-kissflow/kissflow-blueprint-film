@@ -1,0 +1,176 @@
+{
+  "cinematic_corporate__fit": {
+    "type": "score",
+    "score": 2.92,
+    "confidence": 0.91,
+    "legend": {
+      "0": "The music would feel wrong for this film and undercut the brand",
+      "1": "The music is acceptable but feels generic or slightly off in tone",
+      "2": "The music suits the film well",
+      "3": "The music would make the film feel premium and polished for enterprise buyers"
+    },
+    "probabilities": {
+      "0": 0.0,
+      "1": 0.01,
+      "2": 0.07,
+      "3": 0.92
+    }
+  },
+  "cinematic_corporate__playful": {
+    "type": "noul",
+    "noul": 0.11
+  },
+  "cinematic_corporate__voice_clash": {
+    "type": "noul",
+    "noul": 0.24
+  },
+  "cinematic_corporate__arc": {
+    "type": "noul",
+    "noul": 0.77
+  },
+  "tech_ambient_pulse__fit": {
+    "type": "score",
+    "score": 2.83,
+    "confidence": 0.84,
+    "legend": {
+      "0": "The music would feel wrong for this film and undercut the brand",
+      "1": "The music is acceptable but feels generic or slightly off in tone",
+      "2": "The music suits the film well",
+      "3": "The music would make the film feel premium and polished for enterprise buyers"
+    },
+    "probabilities": {
+      "0": 0.0,
+      "1": 0.02,
+      "2": 0.12,
+      "3": 0.86
+    }
+  },
+  "tech_ambient_pulse__playful": {
+    "type": "noul",
+    "noul": 0.1
+  },
+  "tech_ambient_pulse__voice_clash": {
+    "type": "noul",
+    "noul": 0.26
+  },
+  "tech_ambient_pulse__arc": {
+    "type": "noul",
+    "noul": 0.8
+  },
+  "keynote_hybrid__fit": {
+    "type": "score",
+    "score": 2.72,
+    "confidence": 0.72,
+    "legend": {
+      "0": "The music would feel wrong for this film and undercut the brand",
+      "1": "The music is acceptable but feels generic or slightly off in tone",
+      "2": "The music suits the film well",
+      "3": "The music would make the film feel premium and polished for enterprise buyers"
+    },
+    "probabilities": {
+      "0": 0.0,
+      "1": 0.05,
+      "2": 0.18,
+      "3": 0.77
+    }
+  },
+  "keynote_hybrid__playful": {
+    "type": "noul",
+    "noul": 0.24
+  },
+  "keynote_hybrid__voice_clash": {
+    "type": "noul",
+    "noul": 0.53
+  },
+  "keynote_hybrid__arc": {
+    "type": "noul",
+    "noul": 0.84
+  },
+  "orchestral_epic__fit": {
+    "type": "score",
+    "score": 0.02,
+    "confidence": 0.99,
+    "legend": {
+      "0": "The music would feel wrong for this film and undercut the brand",
+      "1": "The music is acceptable but feels generic or slightly off in tone",
+      "2": "The music suits the film well",
+      "3": "The music would make the film feel premium and polished for enterprise buyers"
+    },
+    "probabilities": {
+      "0": 0.99,
+      "1": 0.01,
+      "2": 0.0,
+      "3": 0.0
+    }
+  },
+  "orchestral_epic__playful": {
+    "type": "noul",
+    "noul": 0.3
+  },
+  "orchestral_epic__voice_clash": {
+    "type": "noul",
+    "noul": 0.96
+  },
+  "orchestral_epic__arc": {
+    "type": "noul",
+    "noul": 0.29
+  },
+  "marimba_minimalism__fit": {
+    "type": "score",
+    "score": 0.03,
+    "confidence": 0.97,
+    "legend": {
+      "0": "The music would feel wrong for this film and undercut the brand",
+      "1": "The music is acceptable but feels generic or slightly off in tone",
+      "2": "The music suits the film well",
+      "3": "The music would make the film feel premium and polished for enterprise buyers"
+    },
+    "probabilities": {
+      "0": 0.97,
+      "1": 0.03,
+      "2": 0.0,
+      "3": 0.0
+    }
+  },
+  "marimba_minimalism__playful": {
+    "type": "noul",
+    "noul": 0.87
+  },
+  "marimba_minimalism__voice_clash": {
+    "type": "noul",
+    "noul": 0.77
+  },
+  "marimba_minimalism__arc": {
+    "type": "noul",
+    "noul": 0.35
+  },
+  "lofi_chill__fit": {
+    "type": "score",
+    "score": 0.11,
+    "confidence": 0.9,
+    "legend": {
+      "0": "The music would feel wrong for this film and undercut the brand",
+      "1": "The music is acceptable but feels generic or slightly off in tone",
+      "2": "The music suits the film well",
+      "3": "The music would make the film feel premium and polished for enterprise buyers"
+    },
+    "probabilities": {
+      "0": 0.9,
+      "1": 0.1,
+      "2": 0.0,
+      "3": 0.0
+    }
+  },
+  "lofi_chill__playful": {
+    "type": "noul",
+    "noul": 0.86
+  },
+  "lofi_chill__voice_clash": {
+    "type": "noul",
+    "noul": 0.62
+  },
+  "lofi_chill__arc": {
+    "type": "noul",
+    "noul": 0.26
+  }
+}

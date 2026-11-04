@@ -1,0 +1,1393 @@
+{
+"state": {
+"film": "A 90-second enterprise product film for Kissflow's Agentic App Builder, about AI agents running a governed software process from requirements to production."
+},
+"questions": {
+"text_as_mask__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"text_as_mask__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A huge bold word whose letters are windows onto a drifting product screenshot; at the end the letters zoom 26x so the product fills the screen. Says: the word is the door, the product is inside it. Used for an opener or a chapter card that becomes the product.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"word_relay_geometry__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "Three short words appear one after another on a near-black field, each with its own drawn geometry (a dashed ring, interlocking circles, a metal sheen); the last word resolves to bright white as the conclusion. Used for a three-point value statement.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"steep_tilt_glide__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A very wide real product page stands as a steeply slanted wall and slides past a fixed camera like train carriages, with speed ghosting. Used for a showy tour of a long, multi-section interface.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"shared_element_morph__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A full-screen close-up of one card shrinks and lands exactly in its slot inside an overview grid. Says: this detail belongs to that whole. Used to go from a detail back to the overview.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"letterform_zoom__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A chapter title word punched out of a plate; the camera pushes through the hole in a letter into the next page. Says: the title is the door into the next section.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"timeline_travel__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A camera travels fast along a horizontal timeline, cards spring up at each milestone, and it brakes with a push-in at the final 'Today' marker. Says: a journey through ordered stages that arrives somewhere.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"beat_step_list__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A vertical list of words; a fixed pill catches the next word on every music beat while the colours change. Says: many items in strict rhythm. The densest rhythmic beat of a film.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"bento_light_up__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "A dark 3x2 grid of feature cards; a glowing stroke races around each cell in turn and the cell lights up in place. Says: a calm, solemn overview of several capabilities, all present at once.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s01_hook": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "0-6s. Opening: someone types 'Create an insurance brokerage app', attaches a requirements PDF, and AI agents start building. Voice: 'Any AI can build you an app in minutes.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s02_problem": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "6-13s. Months pass on a calendar while a prototype sits outside production. Voice: 'Getting it to production still takes months. Because production isn't a prototype. It's a process.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s03_spine": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "13-17s. The seven stages of the process are introduced in order: Requirements, Design, Verify, Sign-off, Build, Test, Version. Voice: 'Kissflow's Agentic App Builder runs that process \u2014 every step of it.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s04_requirements": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "17-24s. The agents read the requirements document and list 8 roles, 8 processes, 20 flows. Voice: 'It starts with your requirements.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s05_design": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "24-32s. Four specialist agents design four things in parallel: data model, workflows, permissions, screens. Voice: 'Specialist agents design the data, the workflows, the permissions and the screens. In parallel.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s06_verify": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "32-41s. Fast montage: a verifier checks each step, finds problems, fixes them, re-checks. Voice: 'After every step, a verifier tries to break it. Lockouts. Dead ends. A bad formula.' The energetic peak."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s07_blueprint": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "43-54s. Hero reveal after a beat of silence: the Blueprint, nine documents (BRD, data model, logic, workflows, roles, pages, automations, decisions) that people can read before any screen exists."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s08_signoff": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "54-62s. The requirements document marked 'Draft \u2014 awaiting sign-off'; a decision log; the user clicks Generate and a dialog asks 'Build this in Kissflow?'. Voice: 'Nothing gets built until you say so.'"
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s09_build_test": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "62-73s. The approved Blueprint becomes a real app in the development environment, then is tested for every role's journey."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s10_version": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "73-79s. Every build is a version; production stays locked until a human admin promotes it."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+},
+"theme_sweep_toggle__s11_close": {
+"type": "score",
+"instructions": {
+"question": "How well does this motion technique express what this scene of the film is saying?",
+"technique": "The same interface in two states; a slanted glowing edge sweeps across and changes one state into the other in place. Says: the same thing, transformed, without leaving the page.",
+"scene": "79-90s. Recap of the whole process and the end line 'You write the spec. The agents build exactly that.' with the Kissflow logo."
+},
+"criteria": [
+"The technique's meaning contradicts or distracts from the scene",
+"The technique could be used here but its meaning is unrelated",
+"The technique fits the scene reasonably",
+"The technique's meaning matches exactly what the scene says"
+]
+}
+}
+}
